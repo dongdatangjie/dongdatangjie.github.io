@@ -87,16 +87,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>#Java</p>
-<hr>
-<p>###1.数据存储位置</p>
-<ul>
+        <h1 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h1><hr>
+<h3 id="1-数据存储位置"><a href="#1-数据存储位置" class="headerlink" title="1.数据存储位置"></a>1.数据存储位置</h3><ul>
 <li>寄存器</li>
 <li>堆栈：对象的句柄存储在堆栈中，但是java对象不在</li>
 <li>堆：对象存储在堆中</li>
 <li>静态存储：java的static变量存储</li>
 <li>常数存储：java的常量存储</li>
-<li>非RAM存储<br>###2.java的基本数据类型</li>
+<li>非RAM存储<h3 id="2-java的基本数据类型"><a href="#2-java的基本数据类型" class="headerlink" title="2.java的基本数据类型"></a>2.java的基本数据类型</h3></li>
 </ul>
 <table>
 <thead>
@@ -149,20 +147,20 @@
 </tr>
 </tbody>
 </table>
-<p>###3.static关键词<br>&lt;&lt;java编程思想》中：</p>
+<h3 id="3-static关键词"><a href="#3-static关键词" class="headerlink" title="3.static关键词"></a>3.static关键词</h3><p>&lt;&lt;java编程思想》中：</p>
 <blockquote>
 <p>“static方法就是没有this的方法。在static方法内部不能调用非静态方法，反过来是可以的。而且可以在没有创建任何对象的前提下，仅仅通过类本身来调用static方法。这实际上正是static方法的主要用途。”</p>
 </blockquote>
 <p><strong>static就是在类加载的过程中不需要创建对象引用它，只需要在类之后引用就可以。</strong></p>
-<p>####(1)static变量，方法<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">Class M&#123;</div><div class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">int</span> x;</div><div class="line">	<span class="keyword">private</span> <span class="keyword">int</span> y;</div><div class="line">	<span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">print</span><span class="params">()</span></span>&#123;</div><div class="line">		System.out.println(x);</div><div class="line">		System.out.println(y);</div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">print2</span><span class="params">()</span></span>&#123;</div><div class="line">		System.out.println(x);</div><div class="line">		<span class="comment">//System.out.println(y);</span></div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h4 id="1-static变量，方法"><a href="#1-static变量，方法" class="headerlink" title="(1)static变量，方法"></a>(1)static变量，方法</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">Class M&#123;</div><div class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">int</span> x;</div><div class="line">	<span class="keyword">private</span> <span class="keyword">int</span> y;</div><div class="line">	<span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">print</span><span class="params">()</span></span>&#123;</div><div class="line">		System.out.println(x);</div><div class="line">		System.out.println(y);</div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">print2</span><span class="params">()</span></span>&#123;</div><div class="line">		System.out.println(x);</div><div class="line">		<span class="comment">//System.out.println(y);</span></div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p><strong>上述代码中注释部分在编译时会发生错误，因为在非静态方法中可以调用静态变量，但是在静态方法中无法调用非静态变量。</strong></p>
-<p>###(2)static代码块<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test5</span> </span>&#123;    </div><div class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">int</span> a;    </div><div class="line">	<span class="keyword">private</span> <span class="keyword">int</span> b;   </div><div class="line">	<span class="keyword">static</span>&#123;    </div><div class="line">		Test5.a=<span class="number">3</span>;    </div><div class="line">		System.out.println(a);    </div><div class="line">		Test5 t=<span class="keyword">new</span> Test5();    </div><div class="line">		t.f();    </div><div class="line">		t.b=<span class="number">1000</span>;    </div><div class="line">		System.out.println(t.b);    </div><div class="line">	&#125;    </div><div class="line">	<span class="keyword">static</span>&#123;    </div><div class="line">		Test5.a=<span class="number">4</span>;    </div><div class="line">		System.out.println(a);    </div><div class="line">	&#125;    </div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;    </div><div class="line">	<span class="comment">// TODO 自动生成方法存根    </span></div><div class="line">	&#125;    </div><div class="line">	<span class="keyword">static</span>&#123;    </div><div class="line">		Test5.a=<span class="number">5</span>;    </div><div class="line">		System.out.println(a);    </div><div class="line">	&#125;    </div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">f</span><span class="params">()</span></span>&#123;    </div><div class="line">		System.out.println(<span class="string">"hhahhahah"</span>);    </div><div class="line">	&#125;    </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="2-static代码块"><a href="#2-static代码块" class="headerlink" title="(2)static代码块"></a>(2)static代码块</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test5</span> </span>&#123;    </div><div class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">int</span> a;    </div><div class="line">	<span class="keyword">private</span> <span class="keyword">int</span> b;   </div><div class="line">	<span class="keyword">static</span>&#123;    </div><div class="line">		Test5.a=<span class="number">3</span>;    </div><div class="line">		System.out.println(a);    </div><div class="line">		Test5 t=<span class="keyword">new</span> Test5();    </div><div class="line">		t.f();    </div><div class="line">		t.b=<span class="number">1000</span>;    </div><div class="line">		System.out.println(t.b);    </div><div class="line">	&#125;    </div><div class="line">	<span class="keyword">static</span>&#123;    </div><div class="line">		Test5.a=<span class="number">4</span>;    </div><div class="line">		System.out.println(a);    </div><div class="line">	&#125;    </div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;    </div><div class="line">	<span class="comment">// TODO 自动生成方法存根    </span></div><div class="line">	&#125;    </div><div class="line">	<span class="keyword">static</span>&#123;    </div><div class="line">		Test5.a=<span class="number">5</span>;    </div><div class="line">		System.out.println(a);    </div><div class="line">	&#125;    </div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">f</span><span class="params">()</span></span>&#123;    </div><div class="line">		System.out.println(<span class="string">"hhahhahah"</span>);    </div><div class="line">	&#125;    </div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p><strong>代码的输出结果</strong><br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="number">3</span> </div><div class="line">hhahhahah </div><div class="line"><span class="number">1000</span> </div><div class="line"><span class="number">4</span> </div><div class="line"><span class="number">5</span></div></pre></td></tr></table></figure></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/10/18/java基础知识/" data-id="ciugmhkro00010gnp8gnzjmx3" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2016/10/18/java基础知识/" data-id="ciugmmuyl0001honpwnue7hly" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -251,7 +249,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/10/18/搭建Hexo博客并部署到Githu/" data-id="ciugmhkrr00020gnpmv56krvb" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2016/10/18/搭建Hexo博客并部署到Githu/" data-id="ciugmmuz70002honpwlmun0yd" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -296,7 +294,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/10/18/hello-world/" data-id="ciugmhkri00000gnpderje8vu" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2016/10/18/hello-world/" data-id="ciugmmuye0000honp7k30bhg7" class="article-share-link">Partager</a>
       
       
     </footer>
