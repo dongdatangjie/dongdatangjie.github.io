@@ -4,14 +4,39 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>研究生学测试的南航程序员</title>
+  <title>Android手机实现过程中检测人脸 | 研究生学测试的南航程序员</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="研究生学测试的南航程序员">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="前面我们实现了通过在图片中检测到人脸，之后我们通过在android的surfaceview预览相机功能中加入人脸识别的代码从而实现在行车过程中能够一直检测人脸。作用是预防驾驶员行驶时间过长导致疲劳驾驶的情况出现。
+
+人脸检测方面使用的是google自带的FaceDetection算法
+
+Android程序目录结构
+
+1.CameraInterface类主要用来创建单例模式的camera类用来打开">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android手机实现过程中检测人脸">
+<meta property="og:url" content="http://yoursite.com/2016/10/25/Android手机实现过程中检测人脸/index.html">
 <meta property="og:site_name" content="研究生学测试的南航程序员">
+<meta property="og:description" content="前面我们实现了通过在图片中检测到人脸，之后我们通过在android的surfaceview预览相机功能中加入人脸识别的代码从而实现在行车过程中能够一直检测人脸。作用是预防驾驶员行驶时间过长导致疲劳驾驶的情况出现。
+
+人脸检测方面使用的是google自带的FaceDetection算法
+
+Android程序目录结构
+
+1.CameraInterface类主要用来创建单例模式的camera类用来打开">
+<meta property="og:image" content="http://ofhbt8uhx.bkt.clouddn.com/ca.png">
+<meta property="og:image" content="http://ofhbt8uhx.bkt.clouddn.com/Screenshot_2016-10-25-23-49-40_com.tencent.mm.png">
+<meta property="og:updated_time" content="2016-10-25T16:00:44.118Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="研究生学测试的南航程序员">
+<meta name="twitter:title" content="Android手机实现过程中检测人脸">
+<meta name="twitter:description" content="前面我们实现了通过在图片中检测到人脸，之后我们通过在android的surfaceview预览相机功能中加入人脸识别的代码从而实现在行车过程中能够一直检测人脸。作用是预防驾驶员行驶时间过长导致疲劳驾驶的情况出现。
+
+人脸检测方面使用的是google自带的FaceDetection算法
+
+Android程序目录结构
+
+1.CameraInterface类主要用来创建单例模式的camera类用来打开">
+<meta name="twitter:image" content="http://ofhbt8uhx.bkt.clouddn.com/ca.png">
   
     <link rel="alternative" href="/atom.xml" title="研究生学测试的南航程序员" type="application/atom+xml">
   
@@ -139,9 +164,7 @@
 </nav>
 
       <div class="body-wrap">
-        
-  
-    <article id="post-Android手机实现过程中检测人脸" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-Android手机实现过程中检测人脸" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <input type="hidden" class="isFancy" />
@@ -150,8 +173,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/25/Android手机实现过程中检测人脸/">Android手机实现过程中检测人脸</a>
+    <h1 class="article-title" itemprop="name">
+      Android手机实现过程中检测人脸
     </h1>
   
 
@@ -202,417 +225,64 @@
   </div>
 </article>
 
-
-
-
-
-
-
-
-
-
   
-    <article id="post-ArrayList数组实现" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/23/ArrayList数组实现/">ArrayList数组实现</a>
-    </h1>
   
+    <a href="/2016/10/23/ArrayList数组实现/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">ArrayList数组实现</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<p><strong>我们使用集合的好处在于集合的他的优势是可以扩展的长度变化，无需我们开始设定数组的长度，但实际上的集合本质上也是有数组的数据结构所组成的。</strong></p>
-<blockquote>
-<p>下面我们就是用数组来来实现ArrayLIst的功能：</p>
-<h3 id="流程图"><a href="#流程图" class="headerlink" title="流程图"></a>流程图</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">st=&gt;start: 初始化集合</div><div class="line">e=&gt;end: 添加完成</div><div class="line">op1=&gt;operation: 添加元素</div><div class="line">op2=&gt;operation: 创建新数组</div><div class="line">op3=&gt;operation: 复制老数组元素到新数组</div><div class="line">op4=&gt;operation: 添加元素</div><div class="line">cond=&gt;condition: 内部数组长度是否足够长</div><div class="line"></div><div class="line"></div><div class="line">st-&gt;op1-&gt;cond</div><div class="line">cond(yes)-&gt;op4-&gt;e</div><div class="line">cond(no)-&gt;op2-&gt;op3-&gt;op4</div></pre></td></tr></table></figure>
-</blockquote>
-<hr>
-<h3 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> java.util.Arrays;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * </div><div class="line"> * <span class="doctag">@author</span> Administrator</div><div class="line"> * ArrayList的数组实现方式</div><div class="line"> */  </div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ArrayList</span> </span>&#123;</div><div class="line">	<span class="comment">//默认初始化数组的长度</span></div><div class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> DEFAULT_SIZE=<span class="number">10</span>;</div><div class="line">	<span class="comment">//可变数组的长度</span></div><div class="line">	<span class="keyword">private</span> <span class="keyword">int</span> size=<span class="number">0</span>;</div><div class="line">	<span class="keyword">private</span> <span class="keyword">int</span>[] array;</div><div class="line">	<span class="comment">//默认初始化</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="title">ArrayList</span><span class="params">()</span></span>&#123;</div><div class="line">		array=<span class="keyword">new</span> <span class="keyword">int</span>[DEFAULT_SIZE];</div><div class="line">	&#125;</div><div class="line">	<span class="comment">//自定义初始化</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="title">ArrayList</span><span class="params">(<span class="keyword">int</span> Init)</span></span>&#123;</div><div class="line">		<span class="keyword">if</span>(Init&lt;=<span class="number">0</span>)&#123;</div><div class="line">			Init=DEFAULT_SIZE;</div><div class="line">		&#125;</div><div class="line">		array=<span class="keyword">new</span> <span class="keyword">int</span>[Init]; </div><div class="line">	&#125; </div><div class="line">	<span class="comment">/**</span></div><div class="line">	 * 添加元素</div><div class="line">	 * <span class="doctag">@param</span> num</div><div class="line">	 */</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> num)</span></span>&#123;</div><div class="line">		<span class="keyword">if</span>(size==array.length)&#123;</div><div class="line">			array=Arrays.copyOf(array, size*<span class="number">2</span>);</div><div class="line">		&#125;</div><div class="line">		array[size++]=num;</div><div class="line">	&#125;</div><div class="line">	<span class="comment">/**</span></div><div class="line">	 * 获取指定位置元素</div><div class="line">	 * <span class="doctag">@param</span> num</div><div class="line">	 * <span class="doctag">@return</span> </div><div class="line">	 * <span class="doctag">@throws</span> Exception </div><div class="line">	 */</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">get</span><span class="params">(<span class="keyword">int</span> index)</span></span>&#123;</div><div class="line">		<span class="keyword">if</span>(index&gt;=size)&#123;</div><div class="line">			<span class="keyword">throw</span> <span class="keyword">new</span> IndexOutOfBoundsException(<span class="string">"下标超出了数组的最大下标！"</span>);</div><div class="line">		&#125;</div><div class="line">		</div><div class="line">		<span class="keyword">return</span> array[index];</div><div class="line">	&#125;</div><div class="line">	<span class="comment">/**</span></div><div class="line">	 * 设定指定位置的值</div><div class="line">	 * <span class="doctag">@param</span> index</div><div class="line">	 * <span class="doctag">@return</span></div><div class="line">	 */</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">set</span><span class="params">(<span class="keyword">int</span> index,<span class="keyword">int</span> num)</span></span>&#123;</div><div class="line">		<span class="keyword">int</span> oldnum=get(index);</div><div class="line">		array[index]=num;</div><div class="line">		<span class="keyword">return</span> oldnum;</div><div class="line">		</div><div class="line">	&#125;</div><div class="line">	<span class="comment">/**</span></div><div class="line">	 * 获取变成数组的长度</div><div class="line">	 * <span class="doctag">@return</span></div><div class="line">	 */</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">size</span><span class="params">()</span></span>&#123;</div><div class="line">		<span class="keyword">return</span> size;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<hr>
-<h3 id="测试代码"><a href="#测试代码" class="headerlink" title="测试代码"></a>测试代码</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ArrayListTest</span> </span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">		<span class="comment">//TODO Auto-generated method stub</span></div><div class="line">		ArrayList arrayList=<span class="keyword">new</span> ArrayList(<span class="number">1</span>);</div><div class="line">		arrayList.add(<span class="number">1</span>);</div><div class="line">		arrayList.add(<span class="number">2</span>);</div><div class="line">		arrayList.add(<span class="number">3</span>);</div><div class="line">		arrayList.add(<span class="number">4</span>);</div><div class="line">		arrayList.add(<span class="number">5</span>);</div><div class="line">		System.out.println(arrayList.get(<span class="number">3</span>));</div><div class="line">		arrayList.set(<span class="number">3</span>, <span class="number">9</span>);</div><div class="line">		System.out.println(arrayList.get(<span class="number">3</span>));</div><div class="line">		System.out.println(arrayList.size());</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<hr>
-<h3 id="测试结果"><a href="#测试结果" class="headerlink" title="测试结果"></a>测试结果</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="number">4</span></div><div class="line"><span class="number">9</span></div><div class="line"><span class="number">5</span></div></pre></td></tr></table></figure>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      <a href="/2016/10/23/ArrayList数组实现/" class="archive-article-date">
-  	<time datetime="2016-10-23T14:38:40.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-10-23</time>
-</a>
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据结构/">数据结构</a></li></ul>
+
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+	    <a class="jiathis_button_twitter"></a>
+	    <a class="jiathis_button_plus"></a> 
+	    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
 	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jiathis_r.js?move=0&amp;uid=2117332" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
 
-      
 
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
 
 
 
 
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="Android手机实现过程中检测人脸" data-title="Android手机实现过程中检测人脸" data-url="http://yoursite.com/2016/10/25/Android手机实现过程中检测人脸/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"Hexo"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
 
 
 
-
-
-
-  
-    <article id="post-单例模式" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/20/单例模式/">单例模式</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<p><strong>单例模式是设计模式中的最基本的一种，主要用来创建唯一的对象，防止出现对象重复创建的现象。最基本的单例模式包含两种。</strong></p>
-<h3 id="1-饿汉模式"><a href="#1-饿汉模式" class="headerlink" title="1.饿汉模式"></a>1.饿汉模式</h3><p><strong>饿汉模式指的是在对象好没有被调用的时候，对象已被创建，并等待被调用。</strong></p>
-<blockquote>
-<p>线程安全<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> Class SingleTon&#123;</div><div class="line">	<span class="function"><span class="keyword">private</span> <span class="title">SingleTon</span><span class="params">()</span></span>&#123;&#125;</div><div class="line">	<span class="keyword">private</span> <span class="keyword">static</span> SingleTon s=<span class="keyword">new</span> SingleTon();</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> SingleTon <span class="title">getInstance</span><span class="params">()</span></span>&#123;</div><div class="line">		<span class="keyword">return</span> s;</div><div class="line">	&#125; </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-</blockquote>
-<h3 id="2饱汉模式"><a href="#2饱汉模式" class="headerlink" title="2饱汉模式"></a>2饱汉模式</h3><p><strong>饱汉模式指的是在想要获取对象的时候才创建对象</strong></p>
-<blockquote>
-<p>线程不安全，所以要加上同步锁(下面是最好的情况，应对多线程情况)<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> Class SingleTon&#123;</div><div class="line">	<span class="function"><span class="keyword">private</span> <span class="title">SingleTon</span><span class="params">()</span></span>&#123;&#125;</div><div class="line">	<span class="keyword">private</span> <span class="keyword">static</span> SingleTon s=<span class="function"><span class="keyword">null</span></span></div><div class="line">	<span class="keyword">public</span> <span class="keyword">static</span> SingleTon <span class="title">getInstance</span><span class="params">()</span>&#123;</div><div class="line">		<span class="keyword">if</span>(s==<span class="keyword">null</span>)&#123;</div><div class="line">			<span class="keyword">synchronized</span> (SingleTon.class) &#123;    </div><div class="line">                <span class="keyword">if</span> (s== <span class="keyword">null</span>) &#123;    </div><div class="line">                   instance = <span class="keyword">new</span> TestSingleton();   </div><div class="line">                &#125;    </div><div class="line">             &#125;    </div><div class="line">		&#125;</div><div class="line">		<span class="keyword">return</span> s;</div><div class="line">	&#125; </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-</blockquote>
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      <a href="/2016/10/20/单例模式/" class="archive-article-date">
-  	<time datetime="2016-10-20T15:12:02.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-10-20</time>
-</a>
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/design-pattern/">design pattern</a></li></ul>
-	</div>
-
-      
-
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-Android人脸检测" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/19/Android人脸检测/">Android人脸检测</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<p><strong>Google Play Service提供给我们一个FaceDetection的方法用来检测人脸并绘制出人脸的8个特征点。</strong></p>
-<p><strong>具体的在<a href="https://github.com/tutsplus/Android-PlayServices-FaceDetection" target="_blank" rel="external">Git</a></strong></p>
-<h3 id="1-项目部署"><a href="#1-项目部署" class="headerlink" title="1.项目部署"></a>1.项目部署</h3><p>新建一个Andorid项目(Android Studio)，在build.gradle中需要添加dependencies<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">compile <span class="string">'com.google.android.gms:play-services-vision:8.1.0'</span></div></pre></td></tr></table></figure></p>
-<p>然后在AndroidManifest.xml的Application代码段中加入google play service对于人脸检测的依赖配置：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;meta-data android:name=<span class="string">"com.google.android.gms.vision.DEPENDENCIES"</span> android:value=<span class="string">"face"</span>/&gt;</div></pre></td></tr></table></figure></p>
-<p>下面创建一个自定的View用来显示资源文件中图片，创建两个对象句柄<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FaceOverlayView</span> <span class="keyword">extends</span> <span class="title">View</span></span>&#123;</div><div class="line">    <span class="keyword">private</span> Bitmap mBitmap;</div><div class="line">    <span class="keyword">private</span> SparseArray&lt;Face&gt; mFaces;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">FaceOverlayView</span><span class="params">(Context context)</span></span>&#123;</div><div class="line">        <span class="keyword">this</span>(context, <span class="keyword">null</span>);</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">FaceOverlayView</span><span class="params">(Context context, AttributeSet attrs)</span></span></div><div class="line">    &#123;</div><div class="line">        <span class="keyword">this</span>(context, attrs, <span class="number">0</span>);</div><div class="line">    &#125;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="title">FaceOverlayView</span><span class="params">(Context context, AttributeSet attrs, <span class="keyword">int</span> defStyleAttr)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>(context, attrs, defStyleAttr);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p><strong>Bitmap用来接受图片的信息，SparseArray是稀疏数组，用来存储每张人脸的信息.</strong></p>
-<p>设置bitmap<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setBitmap</span><span class="params">( Bitmap bitmap )</span> </span>&#123;</div><div class="line">    mBitmap = bitmap;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>在res的layout中加入<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version=<span class="string">"1.0"</span> encoding=<span class="string">"utf-8"</span>?&gt;</div><div class="line">&lt;com.tutsplus.facedetection.FaceOverlayView</div><div class="line">    xmlns:android=<span class="string">"http://schemas.android.com/apk/res/android"</span></div><div class="line">    android:id=<span class="string">"@+id/face_overlay"</span></div><div class="line">    android:layout_width=<span class="string">"match_parent"</span></div><div class="line">    android:layout_height=<span class="string">"match_parent"</span> /&gt;</div></pre></td></tr></table></figure></p>
-<p>读取资源图片的数据放到andorid view上<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span> </span>&#123;</div><div class="line"> </div><div class="line">    <span class="keyword">private</span> FaceOverlayView mFaceOverlayView;</div><div class="line"> </div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line">        setContentView(R.layout.activity_main);</div><div class="line">        mFaceOverlayView = (FaceOverlayView) findViewById( R.id.face_overlay );</div><div class="line"> </div><div class="line">        InputStream stream = getResources().openRawResource( R.raw.face );</div><div class="line">        Bitmap bitmap = BitmapFactory.decodeStream(stream);</div><div class="line"> </div><div class="line">        mFaceOverlayView.setBitmap(bitmap);</div><div class="line"> </div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h3 id="2-人脸检测"><a href="#2-人脸检测" class="headerlink" title="2.人脸检测"></a>2.人脸检测</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> com.tangjie.fac;</div><div class="line"></div><div class="line"><span class="keyword">import</span> android.content.Context;</div><div class="line"><span class="keyword">import</span> android.graphics.Bitmap;</div><div class="line"><span class="keyword">import</span> android.graphics.Canvas;</div><div class="line"><span class="keyword">import</span> android.graphics.Color;</div><div class="line"><span class="keyword">import</span> android.graphics.Paint;</div><div class="line"><span class="keyword">import</span> android.graphics.Rect;</div><div class="line"><span class="keyword">import</span> android.util.AttributeSet;</div><div class="line"><span class="keyword">import</span> android.util.Log;</div><div class="line"><span class="keyword">import</span> android.util.SparseArray;</div><div class="line"><span class="keyword">import</span> android.view.View;</div><div class="line"></div><div class="line"><span class="keyword">import</span> com.google.android.gms.vision.Frame;</div><div class="line"><span class="keyword">import</span> com.google.android.gms.vision.face.Face;</div><div class="line"><span class="keyword">import</span> com.google.android.gms.vision.face.FaceDetector;</div><div class="line"><span class="keyword">import</span> com.google.android.gms.vision.face.Landmark;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * Created by Administrator on 2016/10/19.</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FaceOverlayView</span> <span class="keyword">extends</span> <span class="title">View</span></span>&#123;</div><div class="line">    <span class="keyword">private</span> Bitmap mBitmap;</div><div class="line">    <span class="keyword">private</span> SparseArray&lt;Face&gt; mFaces;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">FaceOverlayView</span><span class="params">(Context context)</span> </span>&#123;</div><div class="line">        <span class="keyword">this</span>(context, <span class="keyword">null</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">FaceOverlayView</span><span class="params">(Context context, AttributeSet attrs)</span> </span>&#123;</div><div class="line">        <span class="keyword">this</span>(context, attrs, <span class="number">0</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">FaceOverlayView</span><span class="params">(Context context, AttributeSet attrs, <span class="keyword">int</span> defStyleAttr)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>(context, attrs, defStyleAttr);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setBitmap</span><span class="params">( Bitmap bitmap )</span> </span>&#123;</div><div class="line">        mBitmap = bitmap;</div><div class="line">        FaceDetector detector = <span class="keyword">new</span> FaceDetector.Builder(getContext())</div><div class="line">                .setTrackingEnabled(<span class="keyword">true</span>)</div><div class="line">                .setLandmarkType(FaceDetector.ALL_LANDMARKS)</div><div class="line">                .setMode(FaceDetector.ACCURATE_MODE)</div><div class="line">                .build();</div><div class="line"></div><div class="line">        <span class="keyword">if</span> (!detector.isOperational()) &#123;</div><div class="line">            <span class="comment">//Handle contingency</span></div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            Frame frame = <span class="keyword">new</span> Frame.Builder().setBitmap(bitmap).build();</div><div class="line">            mFaces = detector.detect(frame);</div><div class="line">            Log.i(<span class="string">"mFaces"</span>,mFaces+<span class="string">""</span>);</div><div class="line">            detector.release();</div><div class="line">        &#125;</div><div class="line">        logFaceData();</div><div class="line">        invalidate();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onDraw</span><span class="params">(Canvas canvas)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onDraw(canvas);</div><div class="line"></div><div class="line">        <span class="keyword">if</span> ((mBitmap != <span class="keyword">null</span>) &amp;&amp; (mFaces != <span class="keyword">null</span>)) &#123;</div><div class="line">            <span class="keyword">double</span> scale = drawBitmap(canvas);</div><div class="line">            drawFaceLandmarks(canvas, scale);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">double</span> <span class="title">drawBitmap</span><span class="params">(Canvas canvas)</span> </span>&#123;</div><div class="line">        <span class="keyword">double</span> viewWidth = canvas.getWidth();</div><div class="line">        <span class="keyword">double</span> viewHeight = canvas.getHeight();</div><div class="line">        <span class="keyword">double</span> imageWidth = mBitmap.getWidth();</div><div class="line">        <span class="keyword">double</span> imageHeight = mBitmap.getHeight();</div><div class="line">        <span class="keyword">double</span> scale = Math.min(viewWidth / imageWidth, viewHeight / imageHeight);</div><div class="line"></div><div class="line">        Rect destBounds = <span class="keyword">new</span> Rect(<span class="number">0</span>, <span class="number">0</span>, (<span class="keyword">int</span>)(imageWidth * scale), (<span class="keyword">int</span>)(imageHeight * scale));</div><div class="line">        canvas.drawBitmap(mBitmap, <span class="keyword">null</span>, destBounds, <span class="keyword">null</span>);</div><div class="line">        <span class="keyword">return</span> scale;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">drawFaceBox</span><span class="params">(Canvas canvas, <span class="keyword">double</span> scale)</span> </span>&#123;</div><div class="line">        <span class="comment">//This should be defined as a member variable rather than</span></div><div class="line">        <span class="comment">//being created on each onDraw request, but left here for</span></div><div class="line">        <span class="comment">//emphasis.</span></div><div class="line">        Paint paint = <span class="keyword">new</span> Paint();</div><div class="line">        paint.setColor(Color.GREEN);</div><div class="line">        paint.setStyle(Paint.Style.STROKE);</div><div class="line">        paint.setStrokeWidth(<span class="number">5</span>);</div><div class="line"></div><div class="line">        <span class="keyword">float</span> left = <span class="number">0</span>;</div><div class="line">        <span class="keyword">float</span> top = <span class="number">0</span>;</div><div class="line">        <span class="keyword">float</span> right = <span class="number">0</span>;</div><div class="line">        <span class="keyword">float</span> bottom = <span class="number">0</span>;</div><div class="line"></div><div class="line">        <span class="keyword">for</span>( <span class="keyword">int</span> i = <span class="number">0</span>; i &lt; mFaces.size(); i++ ) &#123;</div><div class="line">            Face face = mFaces.valueAt(i);</div><div class="line"></div><div class="line">            left = (<span class="keyword">float</span>) ( face.getPosition().x * scale );</div><div class="line">            top = (<span class="keyword">float</span>) ( face.getPosition().y * scale );</div><div class="line">            right = (<span class="keyword">float</span>) scale * ( face.getPosition().x + face.getWidth() );</div><div class="line">            bottom = (<span class="keyword">float</span>) scale * ( face.getPosition().y + face.getHeight() );</div><div class="line"></div><div class="line">            canvas.drawRect( left, top, right, bottom, paint );</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">drawFaceLandmarks</span><span class="params">( Canvas canvas, <span class="keyword">double</span> scale )</span> </span>&#123;</div><div class="line">        Paint paint = <span class="keyword">new</span> Paint();</div><div class="line">        paint.setColor( Color.GREEN );</div><div class="line">        paint.setStyle( Paint.Style.STROKE );</div><div class="line">        paint.setStrokeWidth( <span class="number">5</span> );</div><div class="line"></div><div class="line">        <span class="keyword">for</span>( <span class="keyword">int</span> i = <span class="number">0</span>; i &lt; mFaces.size(); i++ ) &#123;</div><div class="line">            Face face = mFaces.valueAt(i);</div><div class="line"></div><div class="line">            <span class="keyword">for</span> ( Landmark landmark : face.getLandmarks() ) &#123;</div><div class="line">                <span class="keyword">int</span> cx = (<span class="keyword">int</span>) ( landmark.getPosition().x * scale );</div><div class="line">                <span class="keyword">int</span> cy = (<span class="keyword">int</span>) ( landmark.getPosition().y * scale );</div><div class="line">                canvas.drawCircle( cx, cy, <span class="number">10</span>, paint );</div><div class="line">            &#125;</div><div class="line"></div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">logFaceData</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">float</span> smilingProbability;</div><div class="line">        <span class="keyword">float</span> leftEyeOpenProbability;</div><div class="line">        <span class="keyword">float</span> rightEyeOpenProbability;</div><div class="line">        <span class="keyword">float</span> eulerY;</div><div class="line">        <span class="keyword">float</span> eulerZ;</div><div class="line">        <span class="keyword">for</span>( <span class="keyword">int</span> i = <span class="number">0</span>; i &lt; mFaces.size(); i++ ) &#123;</div><div class="line">            Face face = mFaces.valueAt(i);</div><div class="line"></div><div class="line">            smilingProbability = face.getIsSmilingProbability();</div><div class="line">            leftEyeOpenProbability = face.getIsLeftEyeOpenProbability();</div><div class="line">            rightEyeOpenProbability = face.getIsRightEyeOpenProbability();</div><div class="line">            eulerY = face.getEulerY();</div><div class="line">            eulerZ = face.getEulerZ();</div><div class="line">            Log.e(<span class="string">"脸数"</span>,i+<span class="string">""</span>);</div><div class="line">            Log.e(<span class="string">"Tuts+ Face Detection"</span>, <span class="string">"Smiling: "</span> + smilingProbability);</div><div class="line">            Log.e( <span class="string">"Tuts+ Face Detection"</span>, <span class="string">"Left eye open: "</span> + leftEyeOpenProbability );</div><div class="line">            Log.e( <span class="string">"Tuts+ Face Detection"</span>, <span class="string">"Right eye open: "</span> + rightEyeOpenProbability );</div><div class="line">            Log.e( <span class="string">"Tuts+ Face Detection"</span>, <span class="string">"Euler Y: "</span> + eulerY );</div><div class="line">            Log.e( <span class="string">"Tuts+ Face Detection"</span>, <span class="string">"Euler Z: "</span> + eulerZ );</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="3-结果"><a href="#3-结果" class="headerlink" title="3.结果"></a>3.结果</h3><p><img src="https://cms-assets.tutsplus.com/uploads/users/798/posts/25212/image/facebox.png" alt=""></p>
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      <a href="/2016/10/19/Android人脸检测/" class="archive-article-date">
-  	<time datetime="2016-10-19T12:13:54.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-10-19</time>
-</a>
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/人脸检测/">人脸检测</a></li></ul>
-	</div>
-
-      
-
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-java基础知识" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/18/java基础知识/">java基础知识</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<h3 id="1-数据存储位置"><a href="#1-数据存储位置" class="headerlink" title="1.数据存储位置"></a>1.数据存储位置</h3><ul>
-<li>寄存器</li>
-<li>堆栈：对象的句柄存储在堆栈中，但是java对象不在</li>
-<li>堆：对象存储在堆中</li>
-<li>静态存储：java的static变量存储</li>
-<li>常数存储：java的常量存储</li>
-<li>非RAM存储<h3 id="2-java的基本数据类型"><a href="#2-java的基本数据类型" class="headerlink" title="2.java的基本数据类型"></a>2.java的基本数据类型</h3></li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>类型</th>
-<th>大小</th>
-<th>封装器类型</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>boolean</td>
-<td>1 位</td>
-<td>Boolean</td>
-</tr>
-<tr>
-<td>char</td>
-<td>16位</td>
-<td>Character</td>
-</tr>
-<tr>
-<td>byte</td>
-<td>8位</td>
-<td>Byte</td>
-</tr>
-<tr>
-<td>short</td>
-<td>16位</td>
-<td>Short</td>
-</tr>
-<tr>
-<td>int</td>
-<td>32位</td>
-<td>Integer</td>
-</tr>
-<tr>
-<td>long</td>
-<td>64位</td>
-<td>Long</td>
-</tr>
-<tr>
-<td>float</td>
-<td>32位</td>
-<td>Float</td>
-</tr>
-<tr>
-<td>double</td>
-<td>64位</td>
-<td>Double</td>
-</tr>
-</tbody>
-</table>
-<h3 id="3-static关键词"><a href="#3-static关键词" class="headerlink" title="3.static关键词"></a>3.static关键词</h3><p>&lt;&lt;java编程思想》中：</p>
-<blockquote>
-<p>“static方法就是没有this的方法。在static方法内部不能调用非静态方法，反过来是可以的。而且可以在没有创建任何对象的前提下，仅仅通过类本身来调用static方法。这实际上正是static方法的主要用途。”</p>
-</blockquote>
-<p><strong>static就是在类加载的过程中不需要创建对象引用它，只需要在类之后引用就可以。</strong></p>
-<h4 id="1-static变量，方法"><a href="#1-static变量，方法" class="headerlink" title="(1)static变量，方法"></a>(1)static变量，方法</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">Class M&#123;</div><div class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">int</span> x;</div><div class="line">	<span class="keyword">private</span> <span class="keyword">int</span> y;</div><div class="line">	<span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">print</span><span class="params">()</span></span>&#123;</div><div class="line">		System.out.println(x);</div><div class="line">		System.out.println(y);</div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">print2</span><span class="params">()</span></span>&#123;</div><div class="line">		System.out.println(x);</div><div class="line">		<span class="comment">//System.out.println(y);</span></div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p><strong>上述代码中注释部分在编译时会发生错误，因为在非静态方法中可以调用静态变量，但是在静态方法中无法调用非静态变量。</strong></p>
-<h3 id="2-static代码块"><a href="#2-static代码块" class="headerlink" title="(2)static代码块"></a>(2)static代码块</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test5</span> </span>&#123;    </div><div class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">int</span> a;    </div><div class="line">	<span class="keyword">private</span> <span class="keyword">int</span> b;   </div><div class="line">	<span class="keyword">static</span>&#123;    </div><div class="line">		Test5.a=<span class="number">3</span>;    </div><div class="line">		System.out.println(a);    </div><div class="line">		Test5 t=<span class="keyword">new</span> Test5();    </div><div class="line">		t.f();    </div><div class="line">		t.b=<span class="number">1000</span>;    </div><div class="line">		System.out.println(t.b);    </div><div class="line">	&#125;    </div><div class="line">	<span class="keyword">static</span>&#123;    </div><div class="line">		Test5.a=<span class="number">4</span>;    </div><div class="line">		System.out.println(a);    </div><div class="line">	&#125;    </div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;    </div><div class="line">	<span class="comment">// TODO 自动生成方法存根    </span></div><div class="line">	&#125;    </div><div class="line">	<span class="keyword">static</span>&#123;    </div><div class="line">		Test5.a=<span class="number">5</span>;    </div><div class="line">		System.out.println(a);    </div><div class="line">	&#125;    </div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">f</span><span class="params">()</span></span>&#123;    </div><div class="line">		System.out.println(<span class="string">"hhahhahah"</span>);    </div><div class="line">	&#125;    </div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p><strong>代码的输出结果</strong><br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="number">3</span> </div><div class="line">hhahhahah </div><div class="line"><span class="number">1000</span> </div><div class="line"><span class="number">4</span> </div><div class="line"><span class="number">5</span></div></pre></td></tr></table></figure></p>
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      <a href="/2016/10/18/java基础知识/" class="archive-article-date">
-  	<time datetime="2016-10-18T14:11:50.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-10-18</time>
-</a>
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
-	</div>
-
-      
-
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-搭建Hexo博客并部署到Githu" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/18/搭建Hexo博客并部署到Githu/">搭建Hexo博客并部署到Githu</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>#搭建Hexo博客并部署到Githu</p>
-<hr>
-<p>大家也搭建过博客，很多时候，按着教程来做就可以了，但是我当时为了搭建Hexo博客并部署到Github，走了不少弯路。现在终于搭建出来了，为了帮助大家，我决定写一篇“史上最详细“截图”搭建Hexo博客并部署到Github”。<br><img src="http://upload-images.jianshu.io/upload_images/1060239-61093512a29e9578.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Hexo"></p>
-<hr>
-<h3 id="工具-原料"><a href="#工具-原料" class="headerlink" title="工具/原料"></a>工具/原料</h3><ul>
-<li>windows</li>
-<li>GIt</li>
-<li>Node.js</li>
-</ul>
-<hr>
-<h3 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install hexo-cli -g</div></pre></td></tr></table></figure>
-<h3 id="初始化Hexo的目录"><a href="#初始化Hexo的目录" class="headerlink" title="初始化Hexo的目录"></a>初始化Hexo的目录</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo init</div></pre></td></tr></table></figure>
-<h3 id="在hexo目录下执行-安装依赖项"><a href="#在hexo目录下执行-安装依赖项" class="headerlink" title="在hexo目录下执行(安装依赖项)"></a>在hexo目录下执行(安装依赖项)</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install</div></pre></td></tr></table></figure>
-<h3 id="输入下面命令后，浏览器输入localhost-4000-本地查看"><a href="#输入下面命令后，浏览器输入localhost-4000-本地查看" class="headerlink" title="输入下面命令后，浏览器输入localhost:4000/ 本地查看"></a>输入下面命令后，浏览器输入localhost:4000/ 本地查看</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p><img src="https://raw.githubusercontent.com/dongdatangjie/dongdatangjie.github.io/master/css/images/banner.jpg" alt=""></p>
-<h3 id="创建GitHub账号"><a href="#创建GitHub账号" class="headerlink" title="创建GitHub账号"></a>创建GitHub账号</h3><p>不做讲解</p>
-<h3 id="创建Repository"><a href="#创建Repository" class="headerlink" title="创建Repository"></a>创建Repository</h3><p>登陆Github账号后，点击右上角的“+”号按钮，选择“New repository”<br><img src="http://upload-images.jianshu.io/upload_images/1060239-6c0530dba11443fe.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="dongdatangjie"><br>在Create a new repository界面填写格式如下图所示: 用户名.github.io<br>填写完成点Create repository创建完成<br><img src="http://upload-images.jianshu.io/upload_images/1060239-f223b2c844606bc5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p>先点击HTTPS，然后复制里面的地址。然后编辑_config.yml文件（在d:\Hexo下）。<br><img src="http://h.hiphotos.baidu.com/exp/w=480/sign=4f13cb0357e736d158138d00ab514ffc/9d82d158ccbf6c817717a937bf3eb13532fa40c9.jpg" alt=""></p>
-<p>修改文件里面的deploy。其中的repository就改成你刚刚复制的地址。保存这个文件.<br><img src="http://g.hiphotos.baidu.com/exp/w=480/sign=b93880a1261f95caa6f593bef9167fc5/0824ab18972bd4071bc8562278899e510eb309e5.jpg" alt=""></p>
-<h3 id="生成SSH-Keys"><a href="#生成SSH-Keys" class="headerlink" title="生成SSH Keys"></a>生成SSH Keys</h3><p>使用ssh-keygen命令生成密钥对</p>
-<p>ssh-keygen -t rsa -C”这里是你申请Github账号时的邮箱”</p>
-<p>然后系统会要你输入密码：（我们输入的密码会在你提交项目的时候使用）</p>
-<p>Enter passphrase (emptyforno passphrase):&lt;输入加密串&gt;Enter same passphrase again:&lt;再次输入加密串&gt;</p>
-<p>（终端提示生成的文件路径）找到你生成的密钥找到id_rsa.pub用终端进入编辑，复制密钥。</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1060239-29b6bf4ce3326e7c.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<h3 id="添加SSH-Key"><a href="#添加SSH-Key" class="headerlink" title="添加SSH Key"></a>添加SSH Key</h3><p>通过命令复制SSH Key内容到系统剪贴板</p>
-<p>pbcopy &lt; ~/.ssh/id_rsa.pub</p>
-<p>登陆Github,点击右侧用户按钮，选择Settings</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1060239-455bfc8e1484c71a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p>点击 Add SSH key 按钮，将复制的密钥粘贴到 Key 栏</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1060239-798aed85b58215a3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<h3 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h3><p>ssh-T git@github.com</p>
-<p>执行结果</p>
-<p>Permanently addedtheRSA host keyforIP address ‘192.30.252.130’tothelistofknown hosts.Are you sure you wanttocontinueconnecting (yes/no)?&lt;输入yes&gt;Hi username! You’ve successfully authenticated,butGitHubdoesnot</p>
-<p>现在你已经可以通过SSH链接到Github了</p>
-<p>如果有问题，请再配置。参考网站</p>
-<p>生成SSH Keys</p>
-<p>Generating SSH Keys</p>
-<p>Error: Permission denied (publickey)错误</p>
-<p>Error: Permission denied (publickey)</p>
-<p>设置你的用户名和密码：</p>
-<p>Git会根据用户的名字和邮箱来记录提交，GitHub也是用这些信息来做权限的处理。</p>
-<p>git config –global user.name”这里是你申请Github账号时的name”git config –global user.email”这里是你申请Github账号时的邮箱”</p>
-<p>###部署<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div><div class="line">$ hexo deploy</div></pre></td></tr></table></figure></p>
-<p>可能出现错误：</p>
-<blockquote>
-<p>搭建 hexo，在执行 hexo deploy 后,出现 error deployer not found:github 的错误</p>
-</blockquote>
-<p>解决方法：</p>
-<blockquote>
-<p>npm install hexo-deployer-git –save 改了之后执行，然后再部署试试</p>
-</blockquote>
-<p>解决完成之后出现部署完成我们的博客啦！<a href="https://dongdatangjie.github.io/" target="_blank" rel="external">博客地址</a></p>
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      <a href="/2016/10/18/搭建Hexo博客并部署到Githu/" class="archive-article-date">
-  	<time datetime="2016-10-18T13:44:37.170Z" itemprop="datePublished"><i class="icon-clock"></i>2016-10-18</time>
-</a>
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
-	</div>
-
-      
-
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-
-
-  
-  
 
 
       </div>
@@ -634,8 +304,8 @@
 		fancybox: true,
 		mathjax: false,
 		animate: true,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
