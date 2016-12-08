@@ -4,11 +4,11 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>Tag: Hexo | 研究生学测试的南航程序员</title>
+  <title>研究生学测试的南航程序员</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
 <meta property="og:title" content="研究生学测试的南航程序员">
-<meta property="og:url" content="http://yoursite.com/tags/Hexo/index.html">
+<meta property="og:url" content="http://yoursite.com/page/2/index.html">
 <meta property="og:site_name" content="研究生学测试的南航程序员">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="研究生学测试的南航程序员">
@@ -141,52 +141,129 @@
       <div class="body-wrap">
         
   
-  
+    <article id="post-java基础知识" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
     
     
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/11/16/搭建Hexo博客并部署到Githu/" class="archive-article-date">
-  	<time datetime="2016-11-16T03:23:14.118Z" itemprop="datePublished"><i class="icon-clock"></i>2016-11-16</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
     <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/11/16/搭建Hexo博客并部署到Githu/">搭建Hexo博客并部署到Githu</a>
+      <a class="article-title" href="/2016/10/18/java基础知识/">java基础知识</a>
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h3 id="1-数据存储位置"><a href="#1-数据存储位置" class="headerlink" title="1.数据存储位置"></a>1.数据存储位置</h3><ul>
+<li>寄存器</li>
+<li>堆栈：对象的句柄存储在堆栈中，但是java对象不在</li>
+<li>堆：对象存储在堆中</li>
+<li>静态存储：java的static变量存储</li>
+<li>常数存储：java的常量存储</li>
+<li>非RAM存储<h3 id="2-java的基本数据类型"><a href="#2-java的基本数据类型" class="headerlink" title="2.java的基本数据类型"></a>2.java的基本数据类型</h3></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>大小</th>
+<th>封装器类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>boolean</td>
+<td>1 位</td>
+<td>Boolean</td>
+</tr>
+<tr>
+<td>char</td>
+<td>16位</td>
+<td>Character</td>
+</tr>
+<tr>
+<td>byte</td>
+<td>8位</td>
+<td>Byte</td>
+</tr>
+<tr>
+<td>short</td>
+<td>16位</td>
+<td>Short</td>
+</tr>
+<tr>
+<td>int</td>
+<td>32位</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>long</td>
+<td>64位</td>
+<td>Long</td>
+</tr>
+<tr>
+<td>float</td>
+<td>32位</td>
+<td>Float</td>
+</tr>
+<tr>
+<td>double</td>
+<td>64位</td>
+<td>Double</td>
+</tr>
+</tbody>
+</table>
+<h3 id="3-static关键词"><a href="#3-static关键词" class="headerlink" title="3.static关键词"></a>3.static关键词</h3><p>&lt;&lt;java编程思想》中：</p>
+<blockquote>
+<p>“static方法就是没有this的方法。在static方法内部不能调用非静态方法，反过来是可以的。而且可以在没有创建任何对象的前提下，仅仅通过类本身来调用static方法。这实际上正是static方法的主要用途。”</p>
+</blockquote>
+<p><strong>static就是在类加载的过程中不需要创建对象引用它，只需要在类之后引用就可以。</strong></p>
+<h4 id="1-static变量，方法"><a href="#1-static变量，方法" class="headerlink" title="(1)static变量，方法"></a>(1)static变量，方法</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">Class M&#123;</div><div class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">int</span> x;</div><div class="line">	<span class="keyword">private</span> <span class="keyword">int</span> y;</div><div class="line">	<span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">print</span><span class="params">()</span></span>&#123;</div><div class="line">		System.out.println(x);</div><div class="line">		System.out.println(y);</div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">print2</span><span class="params">()</span></span>&#123;</div><div class="line">		System.out.println(x);</div><div class="line">		<span class="comment">//System.out.println(y);</span></div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><strong>上述代码中注释部分在编译时会发生错误，因为在非静态方法中可以调用静态变量，但是在静态方法中无法调用非静态变量。</strong></p>
+<h3 id="2-static代码块"><a href="#2-static代码块" class="headerlink" title="(2)static代码块"></a>(2)static代码块</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test5</span> </span>&#123;    </div><div class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">int</span> a;    </div><div class="line">	<span class="keyword">private</span> <span class="keyword">int</span> b;   </div><div class="line">	<span class="keyword">static</span>&#123;    </div><div class="line">		Test5.a=<span class="number">3</span>;    </div><div class="line">		System.out.println(a);    </div><div class="line">		Test5 t=<span class="keyword">new</span> Test5();    </div><div class="line">		t.f();    </div><div class="line">		t.b=<span class="number">1000</span>;    </div><div class="line">		System.out.println(t.b);    </div><div class="line">	&#125;    </div><div class="line">	<span class="keyword">static</span>&#123;    </div><div class="line">		Test5.a=<span class="number">4</span>;    </div><div class="line">		System.out.println(a);    </div><div class="line">	&#125;    </div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;    </div><div class="line">	<span class="comment">// TODO 自动生成方法存根    </span></div><div class="line">	&#125;    </div><div class="line">	<span class="keyword">static</span>&#123;    </div><div class="line">		Test5.a=<span class="number">5</span>;    </div><div class="line">		System.out.println(a);    </div><div class="line">	&#125;    </div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">f</span><span class="params">()</span></span>&#123;    </div><div class="line">		System.out.println(<span class="string">"hhahhahah"</span>);    </div><div class="line">	&#125;    </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><strong>代码的输出结果</strong><br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="number">3</span> </div><div class="line">hhahhahah </div><div class="line"><span class="number">1000</span> </div><div class="line"><span class="number">4</span> </div><div class="line"><span class="number">5</span></div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2016/10/18/java基础知识/" class="archive-article-date">
+  	<time datetime="2016-10-18T14:11:50.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-10-18</time>
+</a>
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
 	</div>
 
-          
+      
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-  
-    </div></section>
-  
 
-    
+
+
+
+
+
+
+
+
+
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    </nav>
+  
 
 
       </div>
@@ -208,10 +285,10 @@
 		fancybox: true,
 		mathjax: false,
 		animate: true,
-		isHome: false,
+		isHome: true,
 		isPost: false,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		root: "/",
