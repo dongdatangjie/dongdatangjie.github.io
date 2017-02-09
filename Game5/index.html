@@ -12,6 +12,10 @@
 var backLayer,cLayer,enemy;
 var point = {x:100,y:200};
 function main(){
+//游戏全屏显示居中
+    LGlobal.stageScale = LStageScaleMode.SHOW_ALL;
+    LSystem.screen(LStage.FULL_SCREEN);
+    LGlobal.align=LStageAlign.TOP_MIDDLE;
 	LGlobal.box2d = new LBox2d();
 	backLayer = new LSprite();	
 	addChild(backLayer);	

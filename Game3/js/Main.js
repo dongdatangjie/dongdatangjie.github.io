@@ -1,4 +1,4 @@
-//声明变量
+﻿//声明变量
 //游戏主层，进度条显示层，背景层，障碍层
 var backLayer,loadingLayer,background,stageLayer;
 var stageSpeed = 0,hero,layers = 0,layersText,hpText;
@@ -15,7 +15,11 @@ var imgData = new Array(
 		{name:"floor3",path:"./images/floor3.png"}
 		);
 
-function main(){	
+function main(){
+	//游戏全屏显示居中
+    	LGlobal.stageScale = LStageScaleMode.SHOW_ALL;
+    	LSystem.screen(LStage.FULL_SCREEN);
+    	LGlobal.align=LStageAlign.TOP_MIDDLE;	
 	//游戏主层初始化
 	backLayer = new LSprite();	
 	//在主层上绘制黑色背景

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Main
  * */
 //设定游戏速度，屏幕大小，回调函数
@@ -72,6 +72,10 @@ var bulletList = new Array(
 		{startAngle:140,angle:20,step:50,speed:5,count:5}//5发
 );
 function main(){
+//游戏全屏显示居中
+    LGlobal.stageScale = LStageScaleMode.SHOW_ALL;
+    LSystem.screen(LStage.FULL_SCREEN);
+    LGlobal.align=LStageAlign.TOP_MIDDLE;
 	loadingLayer = new LoadingSample3();
 	addChild(loadingLayer);	
 	LLoadManage.load(
