@@ -141,6 +141,65 @@
       <div class="body-wrap">
         
   
+    <article id="post-单例模式" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/20/单例模式/">单例模式</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<p><strong>单例模式是设计模式中的最基本的一种，主要用来创建唯一的对象，防止出现对象重复创建的现象。最基本的单例模式包含两种。</strong></p>
+<h3 id="1-饿汉模式"><a href="#1-饿汉模式" class="headerlink" title="1.饿汉模式"></a>1.饿汉模式</h3><p><strong>饿汉模式指的是在对象好没有被调用的时候，对象已被创建，并等待被调用。</strong></p>
+<blockquote>
+<p>线程安全<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> Class SingleTon&#123;</div><div class="line">	<span class="function"><span class="keyword">private</span> <span class="title">SingleTon</span><span class="params">()</span></span>&#123;&#125;</div><div class="line">	<span class="keyword">private</span> <span class="keyword">static</span> SingleTon s=<span class="keyword">new</span> SingleTon();</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> SingleTon <span class="title">getInstance</span><span class="params">()</span></span>&#123;</div><div class="line">		<span class="keyword">return</span> s;</div><div class="line">	&#125; </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+</blockquote>
+<h3 id="2饱汉模式"><a href="#2饱汉模式" class="headerlink" title="2饱汉模式"></a>2饱汉模式</h3><p><strong>饱汉模式指的是在想要获取对象的时候才创建对象</strong></p>
+<blockquote>
+<p>线程不安全，所以要加上同步锁(下面是最好的情况，应对多线程情况)<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> Class SingleTon&#123;</div><div class="line">	<span class="function"><span class="keyword">private</span> <span class="title">SingleTon</span><span class="params">()</span></span>&#123;&#125;</div><div class="line">	<span class="keyword">private</span> <span class="keyword">static</span> SingleTon s=<span class="function"><span class="keyword">null</span></span></div><div class="line">	<span class="keyword">public</span> <span class="keyword">static</span> SingleTon <span class="title">getInstance</span><span class="params">()</span>&#123;</div><div class="line">		<span class="keyword">if</span>(s==<span class="keyword">null</span>)&#123;</div><div class="line">			<span class="keyword">synchronized</span> (SingleTon.class) &#123;    </div><div class="line">                <span class="keyword">if</span> (s== <span class="keyword">null</span>) &#123;    </div><div class="line">                   instance = <span class="keyword">new</span> TestSingleton();   </div><div class="line">                &#125;    </div><div class="line">             &#125;    </div><div class="line">		&#125;</div><div class="line">		<span class="keyword">return</span> s;</div><div class="line">	&#125; </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+</blockquote>
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2016/10/20/单例模式/" class="archive-article-date">
+  	<time datetime="2016-10-20T15:12:02.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-10-20</time>
+</a>
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/design-pattern/">design pattern</a></li></ul>
+	</div>
+
+      
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-Android人脸检测" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -385,7 +444,7 @@
     
     	<section class="tools-section tools-section-tag">
     			<div class="widget tagcloud" id="js-tagcloud">
-    				<a href="/tags/Android/" style="font-size: 16.67px;">Android</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/design-pattern/" style="font-size: 10px;">design pattern</a> <a href="/tags/人脸检测/" style="font-size: 13.33px;">人脸检测</a> <a href="/tags/数据结构/" style="font-size: 20px;">数据结构</a>
+    				<a href="/tags/Android/" style="font-size: 16.67px;">Android</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/design-pattern/" style="font-size: 10px;">design pattern</a> <a href="/tags/人脸检测/" style="font-size: 13.33px;">人脸检测</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a> <a href="/tags/数据结构/" style="font-size: 20px;">数据结构</a>
     			</div>
     	</section>
     
