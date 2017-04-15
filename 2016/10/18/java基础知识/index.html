@@ -12,36 +12,7 @@
 堆：对象存储在堆中
 静态存储：java的static变量存储
 常数存储：java的常量存储
-非RAM存储2.java的基本数据类型
-
-
-
-
-类型
-大小
-封装器类型
-
-
-
-
-boolean
-1 位
-Boolean
-
-
-char
-16位
-Character
-
-
-byte
-8位
-Byte
-
-
-short
-16位
-Short">
+非RAM存储2.java的基本数据类型">
 <meta property="og:type" content="article">
 <meta property="og:title" content="java基础知识">
 <meta property="og:url" content="http://yoursite.com/2016/10/18/java基础知识/index.html">
@@ -52,37 +23,8 @@ Short">
 堆：对象存储在堆中
 静态存储：java的static变量存储
 常数存储：java的常量存储
-非RAM存储2.java的基本数据类型
-
-
-
-
-类型
-大小
-封装器类型
-
-
-
-
-boolean
-1 位
-Boolean
-
-
-char
-16位
-Character
-
-
-byte
-8位
-Byte
-
-
-short
-16位
-Short">
-<meta property="og:updated_time" content="2016-11-16T03:26:50.579Z">
+非RAM存储2.java的基本数据类型">
+<meta property="og:updated_time" content="2017-04-15T07:06:57.453Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java基础知识">
 <meta name="twitter:description" content="1.数据存储位置
@@ -91,36 +33,7 @@ Short">
 堆：对象存储在堆中
 静态存储：java的static变量存储
 常数存储：java的常量存储
-非RAM存储2.java的基本数据类型
-
-
-
-
-类型
-大小
-封装器类型
-
-
-
-
-boolean
-1 位
-Boolean
-
-
-char
-16位
-Character
-
-
-byte
-8位
-Byte
-
-
-short
-16位
-Short">
+非RAM存储2.java的基本数据类型">
   
     <link rel="alternative" href="/atom.xml" title="研究生学测试的南航程序员" type="application/atom+xml">
   
@@ -273,63 +186,12 @@ Short">
 <li>堆：对象存储在堆中</li>
 <li>静态存储：java的static变量存储</li>
 <li>常数存储：java的常量存储</li>
-<li>非RAM存储<h3 id="2-java的基本数据类型"><a href="#2-java的基本数据类型" class="headerlink" title="2.java的基本数据类型"></a>2.java的基本数据类型</h3></li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>类型</th>
-<th>大小</th>
-<th>封装器类型</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>boolean</td>
-<td>1 位</td>
-<td>Boolean</td>
-</tr>
-<tr>
-<td>char</td>
-<td>16位</td>
-<td>Character</td>
-</tr>
-<tr>
-<td>byte</td>
-<td>8位</td>
-<td>Byte</td>
-</tr>
-<tr>
-<td>short</td>
-<td>16位</td>
-<td>Short</td>
-</tr>
-<tr>
-<td>int</td>
-<td>32位</td>
-<td>Integer</td>
-</tr>
-<tr>
-<td>long</td>
-<td>64位</td>
-<td>Long</td>
-</tr>
-<tr>
-<td>float</td>
-<td>32位</td>
-<td>Float</td>
-</tr>
-<tr>
-<td>double</td>
-<td>64位</td>
-<td>Double</td>
-</tr>
-</tbody>
-</table>
-<h3 id="3-static关键词"><a href="#3-static关键词" class="headerlink" title="3.static关键词"></a>3.static关键词</h3><p>&lt;&lt;java编程思想》中：</p>
-<blockquote>
+<li>非RAM存储<h3 id="2-java的基本数据类型"><a href="#2-java的基本数据类型" class="headerlink" title="2.java的基本数据类型"></a>2.java的基本数据类型</h3><a id="more"></a>
+|类型|大小|封装器类型|<br>| ——– |——–|——–|<br>| boolean  | 1 位 |Boolean|<br>| char|   16位 |  Character|<br>| byte|8位|Byte|<br>| short|16位|Short      |<br>| int|32位|Integer|<br>| long |64位|Long|<br>| float |32位|Float|<br>| double|64位|Double|<h3 id="3-static关键词"><a href="#3-static关键词" class="headerlink" title="3.static关键词"></a>3.static关键词</h3>&lt;&lt;java编程思想》中：<blockquote>
 <p>“static方法就是没有this的方法。在static方法内部不能调用非静态方法，反过来是可以的。而且可以在没有创建任何对象的前提下，仅仅通过类本身来调用static方法。这实际上正是static方法的主要用途。”</p>
 </blockquote>
+</li>
+</ul>
 <p><strong>static就是在类加载的过程中不需要创建对象引用它，只需要在类之后引用就可以。</strong></p>
 <h4 id="1-static变量，方法"><a href="#1-static变量，方法" class="headerlink" title="(1)static变量，方法"></a>(1)static变量，方法</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">Class M&#123;</div><div class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">int</span> x;</div><div class="line">	<span class="keyword">private</span> <span class="keyword">int</span> y;</div><div class="line">	<span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">print</span><span class="params">()</span></span>&#123;</div><div class="line">		System.out.println(x);</div><div class="line">		System.out.println(y);</div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">print2</span><span class="params">()</span></span>&#123;</div><div class="line">		System.out.println(x);</div><div class="line">		<span class="comment">//System.out.println(y);</span></div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p><strong>上述代码中注释部分在编译时会发生错误，因为在非静态方法中可以调用静态变量，但是在静态方法中无法调用非静态变量。</strong></p>

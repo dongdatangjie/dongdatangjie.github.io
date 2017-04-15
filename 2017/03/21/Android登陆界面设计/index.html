@@ -13,10 +13,7 @@
 注册界面
 
 
-废话不多说，借用一哥们的qq登陆界面学习一下。链接：GItHub
-[TOC]
-1.欢迎界面其实欢迎界面有挺多中的，比如微信qq一样的通过animation添加图片的渐变效果，然后延迟显示。也有滑动的介绍界面，在我看来全是在打广告。当然不可否认有些人是利用这样一种方式来介绍app的功能，比如阅读器一类的app的前面效果还是有作用的。
-m">
+废话不多说，借用一哥们的qq登陆界面学习一下。链接：GItHub">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android登陆界面设计">
 <meta property="og:url" content="http://yoursite.com/2017/03/21/Android登陆界面设计/index.html">
@@ -28,15 +25,12 @@ m">
 注册界面
 
 
-废话不多说，借用一哥们的qq登陆界面学习一下。链接：GItHub
-[TOC]
-1.欢迎界面其实欢迎界面有挺多中的，比如微信qq一样的通过animation添加图片的渐变效果，然后延迟显示。也有滑动的介绍界面，在我看来全是在打广告。当然不可否认有些人是利用这样一种方式来介绍app的功能，比如阅读器一类的app的前面效果还是有作用的。
-m">
+废话不多说，借用一哥们的qq登陆界面学习一下。链接：GItHub">
 <meta property="og:image" content="http://ofhbt8uhx.bkt.clouddn.com/762fd87dc76540a59e415fb04111cc56dddf11462cf99-uL0KNz_fw658.jpg">
 <meta property="og:image" content="http://ofhbt8uhx.bkt.clouddn.com/splash.png">
 <meta property="og:image" content="http://ofhbt8uhx.bkt.clouddn.com/login.PNG">
 <meta property="og:image" content="http://ofhbt8uhx.bkt.clouddn.com/register.PNG">
-<meta property="og:updated_time" content="2017-03-21T14:15:44.626Z">
+<meta property="og:updated_time" content="2017-04-15T07:05:07.213Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android登陆界面设计">
 <meta name="twitter:description" content="登陆界面的设计主要包括
@@ -46,10 +40,7 @@ m">
 注册界面
 
 
-废话不多说，借用一哥们的qq登陆界面学习一下。链接：GItHub
-[TOC]
-1.欢迎界面其实欢迎界面有挺多中的，比如微信qq一样的通过animation添加图片的渐变效果，然后延迟显示。也有滑动的介绍界面，在我看来全是在打广告。当然不可否认有些人是利用这样一种方式来介绍app的功能，比如阅读器一类的app的前面效果还是有作用的。
-m">
+废话不多说，借用一哥们的qq登陆界面学习一下。链接：GItHub">
 <meta name="twitter:image" content="http://ofhbt8uhx.bkt.clouddn.com/762fd87dc76540a59e415fb04111cc56dddf11462cf99-uL0KNz_fw658.jpg">
   
     <link rel="alternative" href="/atom.xml" title="研究生学测试的南航程序员" type="application/atom+xml">
@@ -205,8 +196,7 @@ m">
 <li>注册界面</li>
 </ul>
 </blockquote>
-<p>废话不多说，借用一哥们的qq登陆界面学习一下。<br>链接：<a href="https://github.com/dongdatangjie/QQLogin" target="_blank" rel="external">GItHub</a></p>
-<p>[TOC]</p>
+<p>废话不多说，借用一哥们的qq登陆界面学习一下。<br>链接：<a href="https://github.com/dongdatangjie/QQLogin" target="_blank" rel="external">GItHub</a><br><a id="more"></a><br>[TOC]</p>
 <h3 id="1-欢迎界面"><a href="#1-欢迎界面" class="headerlink" title="1.欢迎界面"></a>1.欢迎界面</h3><p><strong>其实欢迎界面有挺多中的，比如微信qq一样的通过animation添加图片的渐变效果，然后延迟显示。也有滑动的介绍界面，在我看来全是在打广告。当然不可否认有些人是利用这样一种方式来介绍app的功能，比如阅读器一类的app的前面效果还是有作用的。</strong><br><img src="http://ofhbt8uhx.bkt.clouddn.com/762fd87dc76540a59e415fb04111cc56dddf11462cf99-uL0KNz_fw658.jpg" alt="带有功能介绍的欢迎界面"><br><img src="http://ofhbt8uhx.bkt.clouddn.com/splash.png" alt="一闪而过的欢迎界面，感觉没啥用"></p>
 <h4 id="main-xml"><a href="#main-xml" class="headerlink" title="main.xml"></a>main.xml</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version="1.0" encoding="utf-8"?&gt;</div><div class="line"><span class="tag">&lt;<span class="name">LinearLayout</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span></div><div class="line">    <span class="attr">android:layout_width</span>=<span class="string">"fill_parent"</span></div><div class="line">    <span class="attr">android:layout_height</span>=<span class="string">"fill_parent"</span></div><div class="line">    <span class="attr">android:orientation</span>=<span class="string">"vertical"</span> </div><div class="line">    <span class="attr">android:background</span>=<span class="string">"@drawable/splash"</span>&gt;</div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">LinearLayout</span>&gt;</span></div></pre></td></tr></table></figure>
 <h4 id="WelcomeActivity-java"><a href="#WelcomeActivity-java" class="headerlink" title="WelcomeActivity.java"></a>WelcomeActivity.java</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> com.geniuseoe.demo;</div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">import</span> android.app.Activity;</div><div class="line"><span class="keyword">import</span> android.content.Intent;</div><div class="line"><span class="keyword">import</span> android.os.Bundle;</div><div class="line"><span class="keyword">import</span> android.os.Handler;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * </div><div class="line"> * <span class="doctag">@author</span> geniuseoe2012</div><div class="line"> *  更多精彩，请关注我的CSDN博客http://blog.csdn.net/geniuseoe2012</div><div class="line"> *  android开发交流群：200102476</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">WelcomeActivity</span> <span class="keyword">extends</span> <span class="title">Activity</span></span>&#123;</div><div class="line">    <span class="comment">/** Called when the activity is first created. */</span></div><div class="line"></div><div class="line">	<span class="keyword">private</span> Handler mHandler;</div><div class="line">	</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line">        setContentView(R.layout.main);</div><div class="line">       </div><div class="line">        initView();</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">initView</span><span class="params">()</span></span></div><div class="line">    &#123;</div><div class="line">    	mHandler = <span class="keyword">new</span> Handler();</div><div class="line">    	mHandler.postDelayed(<span class="keyword">new</span> Runnable() &#123;</div><div class="line">			</div><div class="line">			<span class="meta">@Override</span></div><div class="line">			<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</div><div class="line">				<span class="comment">// TODO Auto-generated method stub</span></div><div class="line">				goLoginActivity();</div><div class="line">			&#125;</div><div class="line">    	&#125;, <span class="number">1000</span>);</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">goLoginActivity</span><span class="params">()</span></span></div><div class="line">    &#123;</div><div class="line">    	Intent intent = <span class="keyword">new</span> Intent();</div><div class="line">    	intent.setClass(<span class="keyword">this</span>, LoginActivity.class);</div><div class="line">    	startActivity(intent);</div><div class="line">    	finish();</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">&#125;</div></pre></td></tr></table></figure>

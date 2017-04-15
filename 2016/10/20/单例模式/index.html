@@ -6,25 +6,16 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <title>单例模式 | 研究生学测试的南航程序员</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="单例模式是设计模式中的最基本的一种，主要用来创建唯一的对象，防止出现对象重复创建的现象。最基本的单例模式包含两种。
-1.饿汉模式饿汉模式指的是在对象好没有被调用的时候，对象已被创建，并等待被调用。
-
-线程安全1234567public Class SingleTon&amp;#123;	private SingleTon()&amp;#123;&amp;#125;	private static SingleTon s=">
+  <meta name="description" content="单例模式是设计模式中的最基本的一种，主要用来创建唯一的对象，防止出现对象重复创建的现象。最基本的单例模式包含两种。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="单例模式">
 <meta property="og:url" content="http://yoursite.com/2016/10/20/单例模式/index.html">
 <meta property="og:site_name" content="研究生学测试的南航程序员">
-<meta property="og:description" content="单例模式是设计模式中的最基本的一种，主要用来创建唯一的对象，防止出现对象重复创建的现象。最基本的单例模式包含两种。
-1.饿汉模式饿汉模式指的是在对象好没有被调用的时候，对象已被创建，并等待被调用。
-
-线程安全1234567public Class SingleTon&amp;#123;	private SingleTon()&amp;#123;&amp;#125;	private static SingleTon s=">
-<meta property="og:updated_time" content="2016-10-20T15:33:02.000Z">
+<meta property="og:description" content="单例模式是设计模式中的最基本的一种，主要用来创建唯一的对象，防止出现对象重复创建的现象。最基本的单例模式包含两种。">
+<meta property="og:updated_time" content="2017-04-15T07:10:22.538Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="单例模式">
-<meta name="twitter:description" content="单例模式是设计模式中的最基本的一种，主要用来创建唯一的对象，防止出现对象重复创建的现象。最基本的单例模式包含两种。
-1.饿汉模式饿汉模式指的是在对象好没有被调用的时候，对象已被创建，并等待被调用。
-
-线程安全1234567public Class SingleTon&amp;#123;	private SingleTon()&amp;#123;&amp;#125;	private static SingleTon s=">
+<meta name="twitter:description" content="单例模式是设计模式中的最基本的一种，主要用来创建唯一的对象，防止出现对象重复创建的现象。最基本的单例模式包含两种。">
   
     <link rel="alternative" href="/atom.xml" title="研究生学测试的南航程序员" type="application/atom+xml">
   
@@ -171,7 +162,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <hr>
-<p><strong>单例模式是设计模式中的最基本的一种，主要用来创建唯一的对象，防止出现对象重复创建的现象。最基本的单例模式包含两种。</strong></p>
+<p><strong>单例模式是设计模式中的最基本的一种，主要用来创建唯一的对象，防止出现对象重复创建的现象。最基本的单例模式包含两种。</strong><br><a id="more"></a></p>
 <h3 id="1-饿汉模式"><a href="#1-饿汉模式" class="headerlink" title="1.饿汉模式"></a>1.饿汉模式</h3><p><strong>饿汉模式指的是在对象好没有被调用的时候，对象已被创建，并等待被调用。</strong></p>
 <blockquote>
 <p>线程安全<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> Class SingleTon&#123;</div><div class="line">	<span class="function"><span class="keyword">private</span> <span class="title">SingleTon</span><span class="params">()</span></span>&#123;&#125;</div><div class="line">	<span class="keyword">private</span> <span class="keyword">static</span> SingleTon s=<span class="keyword">new</span> SingleTon();</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> SingleTon <span class="title">getInstance</span><span class="params">()</span></span>&#123;</div><div class="line">		<span class="keyword">return</span> s;</div><div class="line">	&#125; </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>

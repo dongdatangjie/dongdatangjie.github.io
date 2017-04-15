@@ -24,7 +24,7 @@ NDK全称是Native Development Kit，NDK提供了一系列的工具，帮助开�
 <meta property="og:image" content="http://ofhbt8uhx.bkt.clouddn.com/an_5.png">
 <meta property="og:image" content="http://ofhbt8uhx.bkt.clouddn.com/an_6.png">
 <meta property="og:image" content="http://ofhbt8uhx.bkt.clouddn.com/an_7.png">
-<meta property="og:updated_time" content="2016-10-30T06:29:38.000Z">
+<meta property="og:updated_time" content="2017-04-15T07:04:47.165Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android Studio NDK及so文件开发">
 <meta name="twitter:description" content="1.NDK是个啥
@@ -176,14 +176,14 @@ NDK全称是Native Development Kit，NDK提供了一系列的工具，帮助开�
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="1-NDK是个啥"><a href="#1-NDK是个啥" class="headerlink" title="1.NDK是个啥"></a>1.NDK是个啥</h3><blockquote>
-<p>NDK全称是Native Development Kit，NDK提供了一系列的工具，帮助开发者快速开发C(或C++)的动态库，并能自动将so和java应用一起打包成apk。NDK集成了交叉编译器(交叉编译器需要UNIX或LINUX系统环境)，并提供了相应的mk文件隔离CPU、平台、ABI等差异，开发人员只需要简单修改mk文件(指出“哪些文件需要编译”、“编译特性要求”等)，就可以创建出so。</p>
-</blockquote>
+<p>NDK全称是Native Development Kit，NDK提供了一系列的工具，帮助开发者快速开发C(或C++)的动态库，并能自动将so和java应用一起打包成apk。NDK集成了交叉编译器(交叉编译器需要UNIX或LINUX系统环境)，并提供了相应的mk文件隔离CPU、平台、ABI等差异，开发人员只需要简单修改mk文件(指出“哪些文件需要编译”、“编译特性要求”等)，就可以创建出so。<br><a id="more"></a></p>
 <h3 id="2-为啥要用NDK"><a href="#2-为啥要用NDK" class="headerlink" title="2.为啥要用NDK"></a>2.为啥要用NDK</h3><ul>
 <li>代码的保护。由于apk的java层代码很容易被反编译，而C/C++库反汇难度较大。</li>
 <li>可以方便地使用现存的开源库。大部分现存的开源库都是用C/C++代码编写的。</li>
 <li>提高程序的执行效率。将要求高性能的应用逻辑使用C开发，从而提高应用程序的执行效率。</li>
 <li>便于移植。用C/C++写得库可以方便在其他的嵌入式平台上再次使用。</li>
 </ul>
+</blockquote>
 <h3 id="3-JNI是个啥"><a href="#3-JNI是个啥" class="headerlink" title="3.JNI是个啥"></a>3.JNI是个啥</h3><p><strong>JNI的全称是Java Native Interface，它提供了若干的API实现了Java和其他语言的通信(主要是C和C++)。那为什么使用JNI呢？JNI的目的是使java方法能够调用c实现的一些函数。那么so又是啥呢？android中用到的so文件是一个c++的函数库。在android的JNI中，要先将相应的C语言打包成so库，然后导入到lib文件夹中供java调用。</strong></p>
 <h3 id="下面我们开始NDK开发"><a href="#下面我们开始NDK开发" class="headerlink" title="下面我们开始NDK开发"></a>下面我们开始NDK开发</h3><h4 id="1-NDK的环境配置"><a href="#1-NDK的环境配置" class="headerlink" title="1.NDK的环境配置"></a>1.NDK的环境配置</h4><p><strong>去网上下载NDK，我用的是android-ndk-r10b</strong><br><img src="http://ofhbt8uhx.bkt.clouddn.com/android-ndk.png" alt=""><br><strong>配置NDK的环境变量</strong><br><img src="http://ofhbt8uhx.bkt.clouddn.com/path.png" alt=""><br><strong>Android Studio的NDK环境配置</strong><br><img src="http://ofhbt8uhx.bkt.clouddn.com/an-.png" alt=""><br><strong>环境搭建成功</strong><br><img src="http://ofhbt8uhx.bkt.clouddn.com/an_1.png" alt=""></p>
 <h4 id="2-NDK的开发"><a href="#2-NDK的开发" class="headerlink" title="2.NDK的开发"></a>2.NDK的开发</h4><h5 id="2-1-创建Android-Studio项目-工程名位NdkStudy"><a href="#2-1-创建Android-Studio项目-工程名位NdkStudy" class="headerlink" title="2.1 创建Android Studio项目,工程名位NdkStudy"></a>2.1 创建Android Studio项目,工程名位NdkStudy</h5><h5 id="2-2-创建MathKit类"><a href="#2-2-创建MathKit类" class="headerlink" title="2.2 创建MathKit类"></a>2.2 创建MathKit类</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> com.tangjie.ndkstudy.util;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * Created by Administrator on 2016/10/29.</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MathKit</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">native</span> <span class="keyword">int</span> <span class="title">square</span><span class="params">(<span class="keyword">int</span> number)</span></span>;</div><div class="line">    <span class="keyword">static</span> &#123;</div><div class="line">        System.loadLibrary(<span class="string">"JniDemo"</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
