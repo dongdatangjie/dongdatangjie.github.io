@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <title>研究生学测试的南航程序员</title>
@@ -18,13 +18,13 @@
   
     <link rel="icon" href="/favicon.png">
   
-  <script src="/style.js"></script>
+  <script src="/style.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 </head>
 
 <body>
-  <div id="container">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="container">
     <div class="left-col">
       <div class="overlay"></div>
 <div class="intrude-less">
@@ -141,6 +141,67 @@
       <div class="body-wrap">
         
   
+    <article id="post-算法原理（PLA原理）及-Python-实现" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/13/算法原理（PLA原理）及-Python-实现/">算法原理（PLA原理）及 Python 实现</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<blockquote>
+<p>感知机是二类分类的线性分类模型，其输入为实例的特征向量，输出为实例的类别，取+1和-1。</p>
+</blockquote>
+<div align=center><br><img src="http://ofhbt8uhx.bkt.clouddn.com/20170312094333631.png" alt=""><br></div>
+
+<h2 id="感知机的数学表示"><a href="#感知机的数学表示" class="headerlink" title="感知机的数学表示"></a>感知机的数学表示</h2><p><strong>首先，感知机的输入空间（特征空间）为 $x \subseteq R^{n}$，即 n 维向量空间，输出空间为 Y={+1,−1}，即 −1 代表反例，+1 代表正例。例如：输入 $x \in X$ 对应于输入空间 Rn 中的某个点，而输出 $y \in Y$ 表示该点所在的分类。需要注意的是，输入 x 是一个 n 维的向量，即 x=(x(1),x(2),…,x(n))。现在已经有了输入和输出的定义，我们就可以给出感知机 f(x) 的模型了： </strong><br>$$f(x) = \ sign(\omega \cdot x+b)$$<br><strong>其中，向量 ω=(ω(1),ω(2),…,ω(n)) 中的每个分量代表输入向量空间 $R^{n}$ 中每个分量 $x_i$的权重，或者说参数。$b \in R$称为偏置单元，ω⋅x 表示 ω 和 x的内积，sign 是一个符号函数，即： </strong></p>
+<div align="center"><br><img src="http://ofhbt8uhx.bkt.clouddn.com/%E6%8D%95%E8%8E%B7.PNG" alt=""><br></div>
+
+<p><strong>我们把上面这个函数 f(x) 称为感知机。</strong><br>
+        <p class="article-more-link">
+          <a class="article-more-a"  href="/2017/06/13/算法原理（PLA原理）及-Python-实现/#more">more >></a>
+        </p>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2017/06/13/算法原理（PLA原理）及-Python-实现/" class="archive-article-date">
+  	<time datetime="2017-06-13T12:54:45.000Z" itemprop="datePublished"><i class="icon-clock"></i>2017-06-13</time>
+</a>
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/机器学习/">机器学习</a></li></ul>
+	</div>
+
+      
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-Python-matplotlib-数据可视化" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -169,7 +230,7 @@
 <li>其他的还有图形文本 (Text)、注解 (Annotate)等其他描述</li>
 </ul>
 <p><strong>详细的结构图如下图所示：</strong></p>
-<p><div style="center"><br><img src="http://ofhbt8uhx.bkt.clouddn.com/Python_Figure_Structure.png" alt=""><br></div><br>
+<p><div align="center"><br><img src="http://ofhbt8uhx.bkt.clouddn.com/Python_Figure_Structure.png" alt=""><br></div><br>
         <p class="article-more-link">
           <a class="article-more-a"  href="/2017/06/13/Python-matplotlib-数据可视化/#more">more >></a>
         </p>
@@ -659,62 +720,6 @@
 
 
   
-    <article id="post-java集合框架" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/12/04/java集合框架/">java集合框架</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<p><strong>java之前并没有集合框架的概念，只有java数据结构，包含枚举，位集合，向量，栈，字典，哈希表和属性。之后形成了java的集合框架主要用来存放数据，被称为容器。</strong></p>
-<h2 id="1-java集合框架图"><a href="#1-java集合框架图" class="headerlink" title="1.java集合框架图"></a>1.java集合框架图</h2><p><img src="http://ofhbt8uhx.bkt.clouddn.com/20160918105654_491.gif" alt="java集合框图"><br><strong>Java集合框架主要包括两种类型的容器，一种是集合（Collection），存储一个元素集合，另一种是图（Map），存储键/值对映射。Collection接口又有3种子类型，List、Set和Queue，再下面是一些抽象类，最后是具体实现类，常用的有ArrayList、LinkedList、HashSet、LinkedHashSet、HashMap、LinkedHashMap等等。</strong></p>
-<blockquote>
-<p>在介绍集合之前先复习一下栈，队列和链表
-        <p class="article-more-link">
-          <a class="article-more-a"  href="/2016/12/04/java集合框架/#more">more >></a>
-        </p>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      <a href="/2016/12/04/java集合框架/" class="archive-article-date">
-  	<time datetime="2016-12-04T11:51:48.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-12-04</time>
-</a>
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据结构/">数据结构</a></li></ul>
-	</div>
-
-      
-
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -780,7 +785,7 @@
     
     	<section class="tools-section tools-section-tag">
     			<div class="widget tagcloud" id="js-tagcloud">
-    				<a href="/tags/Android/" style="font-size: 20px;">Android</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/design-pattern/" style="font-size: 10px;">design pattern</a> <a href="/tags/diary/" style="font-size: 10px;">diary</a> <a href="/tags/人脸检测/" style="font-size: 15px;">人脸检测</a> <a href="/tags/数据库/" style="font-size: 15px;">数据库</a> <a href="/tags/数据结构/" style="font-size: 20px;">数据结构</a> <a href="/tags/机器学习/" style="font-size: 10px;">机器学习</a>
+    				<a href="/tags/Android/" style="font-size: 20px;">Android</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/design-pattern/" style="font-size: 10px;">design pattern</a> <a href="/tags/diary/" style="font-size: 10px;">diary</a> <a href="/tags/人脸检测/" style="font-size: 15px;">人脸检测</a> <a href="/tags/数据库/" style="font-size: 15px;">数据库</a> <a href="/tags/数据结构/" style="font-size: 20px;">数据结构</a> <a href="/tags/机器学习/" style="font-size: 15px;">机器学习</a>
     			</div>
     	</section>
     
@@ -883,6 +888,23 @@
     </div>
 
 </div>
-  </div>
+  </div><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
 </body>
 </html>

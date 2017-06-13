@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <title>Python matplotlib 数据可视化 | 研究生学测试的南航程序员</title>
@@ -28,7 +28,7 @@ Legend: 图例，区分图中包含的多种曲线或不同分类的数据
 <meta property="og:image" content="http://ofhbt8uhx.bkt.clouddn.com/figure.png">
 <meta property="og:image" content="http://ofhbt8uhx.bkt.clouddn.com/legend.png">
 <meta property="og:image" content="http://ofhbt8uhx.bkt.clouddn.com/bar.png">
-<meta property="og:updated_time" content="2017-06-13T11:57:20.276Z">
+<meta property="og:updated_time" content="2017-06-13T13:10:37.880Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python matplotlib 数据可视化">
 <meta name="twitter:description" content="图的基本结构通常，使用 numpy 组织数据, 使用 matplotlib API 进行数据图像绘制。 一幅数据图基本上包括如下结构：
@@ -45,13 +45,13 @@ Legend: 图例，区分图中包含的多种曲线或不同分类的数据
   
     <link rel="icon" href="/favicon.png">
   
-  <script src="/style.js"></script>
+  <script src="/style.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 </head>
 
 <body>
-  <div id="container">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="container">
     <div class="left-col">
       <div class="overlay"></div>
 <div class="intrude-less">
@@ -194,7 +194,7 @@ Legend: 图例，区分图中包含的多种曲线或不同分类的数据
 <li>其他的还有图形文本 (Text)、注解 (Annotate)等其他描述</li>
 </ul>
 <p><strong>详细的结构图如下图所示：</strong></p>
-<p><div style="center"><br><img src="http://ofhbt8uhx.bkt.clouddn.com/Python_Figure_Structure.png" alt=""><br></div><br><a id="more"></a></p>
+<p><div align="center"><br><img src="http://ofhbt8uhx.bkt.clouddn.com/Python_Figure_Structure.png" alt=""><br></div><br><a id="more"></a></p>
 <h2 id="绘图分类"><a href="#绘图分类" class="headerlink" title="绘图分类"></a>绘图分类</h2><p><strong>Matplotlib API 中提供了常见的绘图类型，常用的包括如下：</strong></p>
 <ul>
 <li>常规图：regular plot</li>
@@ -213,7 +213,7 @@ Legend: 图例，区分图中包含的多种曲线或不同分类的数据
 <li>绘制原始曲线</li>
 <li>配置标题、坐标轴、刻度、图例</li>
 <li>添加文字说明、注解</li>
-<li>显示、保存绘图结果<br><strong>先给出一个完整的图结构吧，这个图主要是绘制 cos、sin、sqrt 函数图像，如下：</strong><br><div style="center"><br><img src="http://ofhbt8uhx.bkt.clouddn.com/figure.png" alt=""><br></div><h2 id="导包"><a href="#导包" class="headerlink" title="导包"></a>导包</h2><strong>涉及到 matplotlib.pyplot、pylab 和 numpy，如：</strong><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="string">'''</span></div><div class="line">Created on 2017年6月13日</div><div class="line"></div><div class="line">@author: 唐杰</div><div class="line">'''</div><div class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</div><div class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</div><div class="line"><span class="keyword">import</span> matplotlib</div></pre></td></tr></table></figure>
+<li>显示、保存绘图结果<br><strong>先给出一个完整的图结构吧，这个图主要是绘制 cos、sin、sqrt 函数图像，如下：</strong><br><div align="center"><br><img src="http://ofhbt8uhx.bkt.clouddn.com/figure.png" alt=""><br></div><h2 id="导包"><a href="#导包" class="headerlink" title="导包"></a>导包</h2><strong>涉及到 matplotlib.pyplot、pylab 和 numpy，如：</strong><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="string">'''</span></div><div class="line">Created on 2017年6月13日</div><div class="line"></div><div class="line">@author: 唐杰</div><div class="line">'''</div><div class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</div><div class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</div><div class="line"><span class="keyword">import</span> matplotlib</div></pre></td></tr></table></figure>
 </li>
 </ul>
 <p>##准备数据<br><strong>numpy 常用来组织源数据:</strong><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#定义数据</span></div><div class="line">x=np.arange(<span class="number">0</span>,<span class="number">10</span>,<span class="number">0.2</span>)</div><div class="line">y1=np.sin(x)</div><div class="line">y2=np.cos(x)</div><div class="line">y3=np.sqrt(x)</div></pre></td></tr></table></figure></p>
@@ -224,13 +224,13 @@ Legend: 图例，区分图中包含的多种曲线或不同分类的数据
 <h2 id="设置文字描述、注解"><a href="#设置文字描述、注解" class="headerlink" title="设置文字描述、注解"></a>设置文字描述、注解</h2><p><strong>可通过如下代码，在数据图中添加文字描述 text：</strong><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#在数据图中添加文字描述</span></div><div class="line">plt.text(<span class="number">4</span>, <span class="number">1.68</span>, <span class="string">r'$x \in [0.0, \ 10.0]$'</span>, color=<span class="string">'k'</span>, fontsize=<span class="number">15</span>)</div><div class="line">plt.text(<span class="number">4</span>, <span class="number">1.38</span>, <span class="string">r'$y \in [-1.0, \ 4.0]$'</span>, color=<span class="string">'k'</span>, fontsize=<span class="number">15</span>)</div></pre></td></tr></table></figure></p>
 <p><strong>可通过如下代码，在数据图中给特殊点添加注解 annotate：</strong><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 特殊点添加注解</span></div><div class="line">plt.scatter([<span class="number">8</span>,],[np.sqrt(<span class="number">8</span>),], <span class="number">50</span>, color =<span class="string">'m'</span>)  <span class="comment"># 使用散点图放大当前点</span></div><div class="line">plt.annotate(<span class="string">r'$2\sqrt&#123;2&#125;$'</span>, xy=(<span class="number">8</span>, np.sqrt(<span class="number">8</span>)), xytext=(<span class="number">8.5</span>, <span class="number">2.2</span>), fontsize=<span class="number">16</span>, color=<span class="string">'#090909'</span>, arrowprops=dict(arrowstyle=<span class="string">'-&gt;'</span>, connectionstyle=<span class="string">'arc3, rad=0.1'</span>, color=<span class="string">'#090909'</span>))</div></pre></td></tr></table></figure></p>
 <h2 id="设置图例"><a href="#设置图例" class="headerlink" title="设置图例"></a>设置图例</h2><p><strong>可使用如下两种方式，给绘图设置图例：</strong><br><strong>1: 在 plt.plot 函数中添加 label 参数后，使用 plt.legend(loc=’up right’)</strong><br><strong>2: 不使用参数 label, 直接使用如下命令：</strong><br><strong>loc 参数表示图例的位置，常见的位置参数如下：</strong></p>
-<p><div style="center"><br><img src="http://ofhbt8uhx.bkt.clouddn.com/legend.png" alt=""><br></div></p>
+<p><div align="center"><br><img src="http://ofhbt8uhx.bkt.clouddn.com/legend.png" alt=""><br></div></p>
 <h2 id="网格线开关"><a href="#网格线开关" class="headerlink" title="网格线开关"></a>网格线开关</h2><p><strong>可使用如下代码，给绘图设置网格线：</strong><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">plt.grid(<span class="keyword">True</span>)</div></pre></td></tr></table></figure></p>
 <h2 id="显示、保存"><a href="#显示、保存" class="headerlink" title="显示、保存"></a>显示、保存</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">plt.show()    <span class="comment"># 显示</span></div><div class="line"><span class="comment"># savefig('../figures/plot3d_ex.png',dpi=48)    # 保存，前提目录存在</span></div></pre></td></tr></table></figure>
 <h2 id="显示中文"><a href="#显示中文" class="headerlink" title="显示中文"></a>显示中文</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">myfont = matplotlib.font_manager.FontProperties(fname=<span class="string">r'F:/Anaconda3/envs/tensorflow/Lib/site-packages/matplotlib/mpl-data/fonts/ttf/msyh.ttc'</span>)</div><div class="line"></div><div class="line">plt.xlabel(<span class="string">'输入x的值'</span>,fontproperties=myfont, fontsize=<span class="number">18</span>, labelpad=<span class="number">60.5</span>)</div></pre></td></tr></table></figure>
 <h2 id="直方图"><a href="#直方图" class="headerlink" title="直方图"></a>直方图</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#coding:utf-8</span></div><div class="line"><span class="string">'''</span></div><div class="line">Created on 2017年6月13日</div><div class="line"></div><div class="line">@author: 唐杰</div><div class="line">'''</div><div class="line"></div><div class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</div><div class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</div><div class="line"><span class="keyword">from</span> pylab <span class="keyword">import</span> *</div><div class="line">x_size = [<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">9</span>, <span class="number">11</span>, <span class="number">13</span>]</div><div class="line">y_time_point = [<span class="number">0</span>, <span class="number">200</span>, <span class="number">415</span>, <span class="number">628</span>, <span class="number">714</span>, <span class="number">862</span>, <span class="number">0</span>]</div><div class="line">x_zhe = [<span class="number">3</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">9</span>, <span class="number">11</span>]</div><div class="line">y_zhe = [<span class="number">200</span>, <span class="number">415</span>, <span class="number">628</span>, <span class="number">714</span>, <span class="number">862</span>]</div><div class="line"><span class="comment"># 设置刻度标签</span></div><div class="line">plt.xticks(x_zhe,(<span class="string">"3"</span>, <span class="string">"5"</span>, <span class="string">"7"</span>, <span class="string">"9"</span>, <span class="string">"11"</span>))</div><div class="line"><span class="comment"># 绘制柱状图</span></div><div class="line">plt.bar(left = (x_size), height = (y_time_point), width = <span class="number">1.0</span>,</div><div class="line">    align=<span class="string">"center"</span>, facecolor = <span class="string">'lightskyblue'</span>,edgecolor = <span class="string">'white'</span>)</div><div class="line"><span class="comment"># 添加文本解释</span></div><div class="line"><span class="keyword">for</span> x, y <span class="keyword">in</span> zip(x_zhe, y_zhe):</div><div class="line">    plt.text(x, y+<span class="number">10</span>, <span class="string">'%.0f'</span> % y, ha=<span class="string">'center'</span>, va= <span class="string">'bottom'</span>)</div><div class="line"><span class="comment">#设置y轴范围</span></div><div class="line">ylim(<span class="number">0</span>, <span class="number">1000</span>)</div><div class="line"><span class="comment"># 画折线图</span></div><div class="line">plt.plot(x_zhe, y_zhe, <span class="string">'y.-'</span>)</div><div class="line">plt.title(<span class="string">'Time values change with Size'</span>)</div><div class="line">plt.xlabel(<span class="string">'Size'</span>)</div><div class="line">plt.ylabel(<span class="string">'Time (s)'</span>)</div><div class="line">plt.grid(<span class="keyword">True</span>)</div><div class="line">plt.show()</div></pre></td></tr></table></figure>
 <p><strong>以上代码可以得到如下直方图：</strong></p>
-<p><div style="center"><br><img src="http://ofhbt8uhx.bkt.clouddn.com/bar.png" alt=""><br></div><br><strong>常用数学符号LATex表示方法:</strong><br><a href="http://mohu.org/info/symbols/symbols.htm" target="_blank" rel="external">http://mohu.org/info/symbols/symbols.htm</a></p>
+<p><div align="center"><br><img src="http://ofhbt8uhx.bkt.clouddn.com/bar.png" alt=""><br></div><br><strong>常用数学符号LATex表示方法:</strong><br><a href="http://mohu.org/info/symbols/symbols.htm" target="_blank" rel="external">http://mohu.org/info/symbols/symbols.htm</a></p>
 
       
     </div>
@@ -254,6 +254,15 @@ Legend: 图例，区分图中包含的多种曲线或不同分类的数据
 
   
 <nav id="article-nav">
+  
+    <a href="/2017/06/13/算法原理（PLA原理）及-Python-实现/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          算法原理（PLA原理）及 Python 实现
+        
+      </div>
+    </a>
   
   
     <a href="/2017/06/04/Android-引导界面/" id="article-nav-older" class="article-nav-link-wrap">
@@ -370,7 +379,7 @@ Legend: 图例，区分图中包含的多种曲线或不同分类的数据
     
     	<section class="tools-section tools-section-tag">
     			<div class="widget tagcloud" id="js-tagcloud">
-    				<a href="/tags/Android/" style="font-size: 20px;">Android</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/design-pattern/" style="font-size: 10px;">design pattern</a> <a href="/tags/diary/" style="font-size: 10px;">diary</a> <a href="/tags/人脸检测/" style="font-size: 15px;">人脸检测</a> <a href="/tags/数据库/" style="font-size: 15px;">数据库</a> <a href="/tags/数据结构/" style="font-size: 20px;">数据结构</a> <a href="/tags/机器学习/" style="font-size: 10px;">机器学习</a>
+    				<a href="/tags/Android/" style="font-size: 20px;">Android</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/design-pattern/" style="font-size: 10px;">design pattern</a> <a href="/tags/diary/" style="font-size: 10px;">diary</a> <a href="/tags/人脸检测/" style="font-size: 15px;">人脸检测</a> <a href="/tags/数据库/" style="font-size: 15px;">数据库</a> <a href="/tags/数据结构/" style="font-size: 20px;">数据结构</a> <a href="/tags/机器学习/" style="font-size: 15px;">机器学习</a>
     			</div>
     	</section>
     
@@ -473,6 +482,23 @@ Legend: 图例，区分图中包含的多种曲线或不同分类的数据
     </div>
 
 </div>
-  </div>
+  </div><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
 </body>
 </html>
