@@ -4,18 +4,14 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>单例模式 | 研究生学测试的南航程序员</title>
+  <title>Tag: 机器学习 | 研究生学测试的南航程序员</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="单例模式是设计模式中的最基本的一种，主要用来创建唯一的对象，防止出现对象重复创建的现象。最基本的单例模式包含两种。">
-<meta property="og:type" content="article">
-<meta property="og:title" content="单例模式">
-<meta property="og:url" content="http://yoursite.com/2016/10/20/单例模式/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="研究生学测试的南航程序员">
+<meta property="og:url" content="http://yoursite.com/tags/机器学习/index.html">
 <meta property="og:site_name" content="研究生学测试的南航程序员">
-<meta property="og:description" content="单例模式是设计模式中的最基本的一种，主要用来创建唯一的对象，防止出现对象重复创建的现象。最基本的单例模式包含两种。">
-<meta property="og:updated_time" content="2017-04-15T07:10:22.538Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="单例模式">
-<meta name="twitter:description" content="单例模式是设计模式中的最基本的一种，主要用来创建唯一的对象，防止出现对象重复创建的现象。最基本的单例模式包含两种。">
+<meta name="twitter:title" content="研究生学测试的南航程序员">
   
     <link rel="alternative" href="/atom.xml" title="研究生学测试的南航程序员" type="application/atom+xml">
   
@@ -143,122 +139,54 @@
 </nav>
 
       <div class="body-wrap">
-        <article id="post-单例模式" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
         
   
-    <h1 class="article-title" itemprop="name">
-      单例模式
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2017" class="archive-year">2017</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2017/06/13/Python-matplotlib-数据可视化/" class="archive-article-date">
+  	<time datetime="2017-06-13T11:50:26.000Z" itemprop="datePublished"><i class="icon-clock"></i>2017-06-13</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2017/06/13/Python-matplotlib-数据可视化/">Python matplotlib 数据可视化</a>
     </h1>
   
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<p><strong>单例模式是设计模式中的最基本的一种，主要用来创建唯一的对象，防止出现对象重复创建的现象。最基本的单例模式包含两种。</strong><br><a id="more"></a></p>
-<h3 id="1-饿汉模式"><a href="#1-饿汉模式" class="headerlink" title="1.饿汉模式"></a>1.饿汉模式</h3><p><strong>饿汉模式指的是在对象好没有被调用的时候，对象已被创建，并等待被调用。</strong></p>
-<blockquote>
-<p>线程安全<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> Class SingleTon&#123;</div><div class="line">	<span class="function"><span class="keyword">private</span> <span class="title">SingleTon</span><span class="params">()</span></span>&#123;&#125;</div><div class="line">	<span class="keyword">private</span> <span class="keyword">static</span> SingleTon s=<span class="keyword">new</span> SingleTon();</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> SingleTon <span class="title">getInstance</span><span class="params">()</span></span>&#123;</div><div class="line">		<span class="keyword">return</span> s;</div><div class="line">	&#125; </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-</blockquote>
-<h3 id="2饱汉模式"><a href="#2饱汉模式" class="headerlink" title="2饱汉模式"></a>2饱汉模式</h3><p><strong>饱汉模式指的是在想要获取对象的时候才创建对象</strong></p>
-<blockquote>
-<p>线程不安全，所以要加上同步锁(下面是最好的情况，应对多线程情况)<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> Class SingleTon&#123;</div><div class="line">	<span class="function"><span class="keyword">private</span> <span class="title">SingleTon</span><span class="params">()</span></span>&#123;&#125;</div><div class="line">	<span class="keyword">private</span> <span class="keyword">static</span> SingleTon s=<span class="function"><span class="keyword">null</span></span></div><div class="line">	<span class="keyword">public</span> <span class="keyword">static</span> SingleTon <span class="title">getInstance</span><span class="params">()</span>&#123;</div><div class="line">		<span class="keyword">if</span>(s==<span class="keyword">null</span>)&#123;</div><div class="line">			<span class="keyword">synchronized</span> (SingleTon.class) &#123;    </div><div class="line">                <span class="keyword">if</span> (s== <span class="keyword">null</span>) &#123;    </div><div class="line">                   instance = <span class="keyword">new</span> TestSingleton();   </div><div class="line">                &#125;    </div><div class="line">             &#125;    </div><div class="line">		&#125;</div><div class="line">		<span class="keyword">return</span> s;</div><div class="line">	&#125; </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-</blockquote>
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      <a href="/2016/10/20/单例模式/" class="archive-article-date">
-  	<time datetime="2016-10-20T15:12:02.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-10-20</time>
-</a>
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/design-pattern/">design pattern</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/机器学习/">机器学习</a></li></ul>
 	</div>
 
-      
+          
 
-      <div class="clearfix"></div>
-    </div>
+        </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2016/10/23/ArrayList数组实现/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          ArrayList数组实现
-        
-      </div>
-    </a>
   
   
-    <a href="/2016/10/19/Android人脸检测/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Android人脸检测</div>
-      <i class="icon-circle-right"></i>
-    </a>
+    </div></section>
   
-</nav>
 
-
-
-
-<div class="share_jia">
-	<!-- JiaThis Button BEGIN -->
-	<div class="jiathis_style">
-		<span class="jiathis_txt">Share to: &nbsp; </span>
-		<a class="jiathis_button_facebook"></a> 
-	    <a class="jiathis_button_twitter"></a>
-	    <a class="jiathis_button_plus"></a> 
-	    <a class="jiathis_button_tsina"></a>
-		<a class="jiathis_button_cqq"></a>
-		<a class="jiathis_button_douban"></a>
-		<a class="jiathis_button_weixin"></a>
-		<a class="jiathis_button_tumblr"></a>
-    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
-	</div>
-	<script type="text/javascript" src="http://v3.jiathis.com/code/jiathis_r.js?move=0&amp;uid=2117332" charset="utf-8"></script>
-	<!-- JiaThis Button END -->
-</div>
-
-
-
-
-
-
-<div class="duoshuo">
-	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="单例模式" data-title="单例模式" data-url="http://yoursite.com/2016/10/20/单例模式/"></div>
-	<!-- 多说评论框 end -->
-	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-	<script type="text/javascript">
-	var duoshuoQuery = {short_name:"Hexo"};
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';ds.async = true;
-		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0] 
-		 || document.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
-	</script>
-	<!-- 多说公共JS代码 end -->
-</div>
-
-
-
+    
 
 
       </div>
@@ -281,9 +209,9 @@
 		mathjax: false,
 		animate: true,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: false,
 		root: "/",
