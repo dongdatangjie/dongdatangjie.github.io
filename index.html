@@ -141,6 +141,54 @@
       <div class="body-wrap">
         
   
+    <article id="post-python机器学习之旅" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/22/python机器学习之旅/">python机器学习之旅</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<p><img src="http://ofhbt8uhx.bkt.clouddn.com/python%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8B%E6%97%85.png" alt=""><br>
+        <p class="article-more-link">
+          <a class="article-more-a"  href="/2017/06/22/python机器学习之旅/#more">more >></a>
+        </p>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2017/06/22/python机器学习之旅/" class="archive-article-date">
+  	<time datetime="2017-06-22T14:35:37.981Z" itemprop="datePublished"><i class="icon-clock"></i>2017-06-22</time>
+</a>
+      
+      
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-Scikit-learn之旅（2）" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -168,24 +216,10 @@
 <li><strong>超平面：</strong>如果数据集是N维的，那么就需要N-1维的某对象来对数据进行分割。该对象叫做超平面，也就是分类的决策边界。</li>
 <li><strong>间隔：</strong>一个点到分割面的距离，称为点相对于分割面的距离。数据集中所有的点到分割面的最小间隔的2倍，称为分类器或数据集的间隔。</li>
 <li><strong>最大间隔：</strong>SVM分类器是要找最大的数据集间隔。</li>
-<li><strong>支持向量：</strong>离分割超平面最近的那些点。</li>
-</ul>
-</blockquote>
-<h3 id="最大间隔"><a href="#最大间隔" class="headerlink" title="最大间隔"></a>最大间隔</h3><p><strong>最大化决策界的间隔，这么做的原因是间隔大的决策界趋向于含有更小的泛化误差，而间隔小的决策界更容易过拟合。为了更好地理解间隔最大化，我们先认识一下那些和决策界平行的正超平面和负超平面，他们可以表示为：</strong><br>$$\omega_0+ \omega^{T}x_p=1 \qquad (1)$$<br>$$\omega_0+ \omega^{T}x_n=-1 \qquad(2)$$</p>
-<p><strong>用(1)减去(2)，得到：</strong><br>$$\Rightarrow \omega^{T}(x_p-x_n)=2$$</p>
-<p><strong>对上式进行归一化，</strong><br>$$\frac{\omega^{T}(x_p-x_n)}{\parallel\omega\parallel}=\frac{2}{\parallel\omega\parallel}$$</p>
-<p><strong>其中，$\parallel\omega\parallel=\sqrt{\sum_{j=1}^{m}\omega_j^{2}}$</strong><br><strong>上式等号左边可以解释为正超平面和负超平面之间的距离，也就是所谓的间隔。</strong><br><strong>现在SVM的目标函数变成了最大化间隔 ,限制条件是样本被正确分类，可以写成：</strong><br>$$\omega_0+\omega^{T}x^{(i)}\ge1\qquad y^{(i)}=1$$<br>$$\omega_0+\omega^{T}x^{(i)}&lt;-1\qquad y^{(i)}=-1$$<br><strong>上面两个限制条件说的是所有负样本要落在负超平面那一侧，所有正样本要落在正超平面那侧。我们用更简洁的写法代替：</strong><br>$$y^{(i)}(\omega_0+\omega^{T}x^{(i)})\ge1\qquad \forall_i$$</p>
-<h3 id="使用松弛变量解决非线性可分的情况"><a href="#使用松弛变量解决非线性可分的情况" class="headerlink" title="使用松弛变量解决非线性可分的情况"></a>使用松弛变量解决非线性可分的情况</h3><p><strong>引入松弛变量的动机是原来的线性限制条件在面对非线性可分数据时需要松弛，这样才能保证算法收敛。</strong><br><strong>松弛变量值为正，添加到线性限制条件即可:</strong><br>$$\omega^{T}x^{(i)}\ge1\qquad y^{(i)}=1-\zeta^{(i)}$$<br>$$\omega^{T}x^{(i)}&lt;-1\qquad y^{(i)}=1+\zeta^{(i)}$$<br><strong>新的目标函数变成了:</strong><br>$$\frac{1}{2}\parallel\omega\parallel^{2}+C(\sum_{i}\zeta^{(i)})$$<br><strong>使用变量C，我们可以控制错分类的惩罚量。和逻辑斯蒂回归不同，这里C越大，对于错分类的惩罚越大。可以通过C控制间隔的宽度，在bias-variance之间找到某种平衡：</strong><br><img src="http://ofhbt8uhx.bkt.clouddn.com/svm2.PNG" alt=""><br><strong>这个概念和正则化相关，如果增大C的值会增加bias而减小模型的方差。</strong><br><strong>代码如下：</strong><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#coding:utf-8</span></div><div class="line"><span class="string">'''</span></div><div class="line">Created on 2017年6月16日</div><div class="line">SVM</div><div class="line">@author: 唐杰</div><div class="line">'''</div><div class="line"><span class="keyword">from</span> sklearn.svm <span class="keyword">import</span> SVC</div><div class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> datasets</div><div class="line"><span class="keyword">from</span> sklearn.cross_validation <span class="keyword">import</span> train_test_split </div><div class="line"><span class="keyword">from</span> sklearn.preprocessing <span class="keyword">import</span> StandardScaler</div><div class="line"><span class="keyword">import</span> Util</div><div class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</div><div class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</div><div class="line">    lris=datasets.load_iris()</div><div class="line">    X=lris.data[:,[<span class="number">2</span>,<span class="number">3</span>]]</div><div class="line">    y=lris.target</div><div class="line">    <span class="comment">#将数据集分为训练集和测试集，训练集占30%</span></div><div class="line">    X_train,X_test,y_train,y_test=train_test_split(X,y,test_size=<span class="number">0.3</span>,random_state=<span class="number">0</span>) </div><div class="line">    <span class="comment">#数据集标准化</span></div><div class="line">    sc=StandardScaler()</div><div class="line">    sc.fit(X_train)</div><div class="line">    X_train_std=sc.transform(X_train)</div><div class="line">    X_test_std=sc.transform(X_test)</div><div class="line">    X_combined_std=np.vstack((X_train_std,X_test_std))</div><div class="line">    y_combined=np.hstack((y_train,y_test))</div><div class="line">    svm=SVC(kernel=<span class="string">'linear'</span>,C=<span class="number">1.0</span>,random_state=<span class="number">0</span>)</div><div class="line">    svm.fit(X_train_std,y_train)</div><div class="line">    Util.plot_decision_region(X_combined_std, y_combined, classifier=svm)</div><div class="line">    plt.xlabel(<span class="string">'petal length [standardized]'</span>)</div><div class="line">    plt.ylabel(<span class="string">'sepal length [standardized]'</span>)</div><div class="line">    plt.legend(loc=<span class="string">'upper left'</span>)</div><div class="line">    plt.show()</div></pre></td></tr></table></figure></p>
-<p><strong>运行结果如下：</strong><br><img src="http://ofhbt8uhx.bkt.clouddn.com/svm3.png" alt=""></p>
-<h3 id="使用核SVM解决非线性"><a href="#使用核SVM解决非线性" class="headerlink" title="使用核SVM解决非线性"></a>使用核SVM解决非线性</h3><blockquote>
-<p><strong>SVM之所以受欢迎度这么高，另一个重要的原因是它很容易核化(kernelized)，能够解决非线性分类问题</strong></p>
-</blockquote>
-<p><strong>使用下面的代码，我们将创造一个简单的数据集，其中100个样本是正类，100个样本是负类。</strong><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">np.random.seed(<span class="number">0</span>)<span class="comment">#保证每次生成的随机数相同</span></div><div class="line">   X_xor=np.random.randn(<span class="number">200</span>,<span class="number">2</span>)</div><div class="line">   y_xor=np.logical_xor(X_xor[:,<span class="number">0</span>]&gt;<span class="number">0</span>,X_xor[:,<span class="number">1</span>]&gt;<span class="number">0</span>)<span class="comment">#异或函数 符号不同为true</span></div><div class="line">   y_xor=np.where(y_xor,<span class="number">1</span>,<span class="number">-1</span>)</div><div class="line">   plt.scatter(X_xor[y_xor==<span class="number">1</span>,<span class="number">0</span>],X_xor[y_xor==<span class="number">1</span>,<span class="number">1</span>],c=<span class="string">'b'</span>,marker=<span class="string">'x'</span>,label=<span class="string">'1'</span>) </div><div class="line">   plt.scatter(X_xor[y_xor==<span class="number">-1</span>,<span class="number">0</span>],X_xor[y_xor==<span class="number">-1</span>,<span class="number">1</span>],c=<span class="string">'r'</span>,marker=<span class="string">'s'</span>,label=<span class="string">'-1'</span>)</div><div class="line">   plt.ylim(<span class="number">-3.0</span>)</div><div class="line">   plt.legend()</div><div class="line">   plt.show()</div></pre></td></tr></table></figure></p>
-<p><strong>实现效果：</strong><br><img src="http://ofhbt8uhx.bkt.clouddn.com/kernel1.png" alt=""><br><strong>核方法的idea是为了解决线性不可分数据，在原来特征基础上创造出非线性的组合，然后利用映射函数 将现有特征维度映射到更高维的特征空间，并且这个高维度特征空间能够使得原来线性不可分数据变成了线性可分的</strong><br><strong>常用的一个核函数是Radial Basis Function kernel(RBF核)，也称为高斯核:</strong><br>$$k(x^{(i)},x^{(j)})=exp(-\frac{\parallel x^{(i)}-x^{(j)}\parallel^{2}}{2\sigma^{2}})$$<br><strong>通俗地讲，核(kernel)可以被解释为两个样本之间的相似形函数。高斯核中e的指数范围&lt;=0,当两个样本完全一样时，值为1，两个样本完全不同时，值为0</strong><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">svm=SVC(kernel=<span class="string">'rbf'</span>,C=<span class="number">10.0</span>,gamma=<span class="number">1.0</span>,random_state=<span class="number">0</span>)</div><div class="line">   svm.fit(X_xor,y_xor)</div><div class="line">   Util.plot_decision_region(X_xor, y_xor, classifier=svm)</div><div class="line">   plt.legend(loc=<span class="string">'upper left'</span>)</div><div class="line">   plt.show()</div></pre></td></tr></table></figure></p>
-<p><img src="http://ofhbt8uhx.bkt.clouddn.com/kernel2.png" alt=""></p>
-<h3 id="决策树"><a href="#决策树" class="headerlink" title="决策树"></a>决策树</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#coding:utf-8</span></div><div class="line"><span class="string">'''</span></div><div class="line">Created on 2017年6月16日</div><div class="line">决策树分类算法</div><div class="line">@author: 唐杰</div><div class="line">'''</div><div class="line"><span class="keyword">from</span> sklearn.tree <span class="keyword">import</span> DecisionTreeClassifier</div><div class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> datasets</div><div class="line"><span class="keyword">from</span> sklearn.cross_validation <span class="keyword">import</span> train_test_split </div><div class="line"><span class="keyword">from</span> sklearn.preprocessing <span class="keyword">import</span> StandardScaler</div><div class="line"><span class="keyword">import</span> Util</div><div class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</div><div class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</div><div class="line">    lris=datasets.load_iris()</div><div class="line">    X=lris.data[:,[<span class="number">2</span>,<span class="number">3</span>]]</div><div class="line">    y=lris.target</div><div class="line">    <span class="comment">#将数据集分为训练集和测试集，训练集占30%</span></div><div class="line">    X_train,X_test,y_train,y_test=train_test_split(X,y,test_size=<span class="number">0.3</span>,random_state=<span class="number">0</span>) </div><div class="line">    <span class="comment">#数据集标准化</span></div><div class="line">    sc=StandardScaler()</div><div class="line">    sc.fit(X_train)</div><div class="line">    X_train_std=sc.transform(X_train)</div><div class="line">    X_test_std=sc.transform(X_test)</div><div class="line">    X_combined_std=np.vstack((X_train_std,X_test_std))</div><div class="line">    y_combined=np.hstack((y_train,y_test))</div><div class="line">    tree=DecisionTreeClassifier(criterion=<span class="string">'entropy'</span>,max_depth=<span class="number">3</span>,random_state=<span class="number">0</span>)</div><div class="line">    tree.fit(X_train_std,y_train)</div><div class="line">    Util.plot_decision_region(X_combined_std, y_combined, classifier=tree)</div><div class="line">    plt.xlabel(<span class="string">'petal length [standardized]'</span>)</div><div class="line">    plt.ylabel(<span class="string">'sepal length [standardized]'</span>)</div><div class="line">    plt.legend(loc=<span class="string">'upper left'</span>)</div><div class="line">    plt.show()</div></pre></td></tr></table></figure>
-<p><img src="http://ofhbt8uhx.bkt.clouddn.com/tree1.png" alt=""></p>
-<h3 id="随机森林"><a href="#随机森林" class="headerlink" title="随机森林"></a>随机森林</h3><h3 id="K邻近"><a href="#K邻近" class="headerlink" title="K邻近"></a>K邻近</h3>
+<li><strong>支持向量：</strong>离分割超平面最近的那些点。
+        <p class="article-more-link">
+          <a class="article-more-a"  href="/2017/06/21/Scikit-learn之旅（2）/#more">more >></a>
+        </p>
       
     </div>
     <div class="article-info article-info-index">
@@ -244,39 +278,10 @@
 <p><strong>代码运行结果：</strong></p>
 <div align="center"><br><img src="http://ofhbt8uhx.bkt.clouddn.com/%E6%84%9F%E7%9F%A5%E5%99%A8.png" alt=""><br></div>
 
-<p><strong>从图中可见三个类别无法被线性决策界完美分类</strong></p>
-<h2 id="逻辑斯蒂回归对类别概率建模"><a href="#逻辑斯蒂回归对类别概率建模" class="headerlink" title="逻辑斯蒂回归对类别概率建模"></a>逻辑斯蒂回归对类别概率建模</h2><h3 id="逻辑斯蒂回归和条件概率"><a href="#逻辑斯蒂回归和条件概率" class="headerlink" title="逻辑斯蒂回归和条件概率"></a>逻辑斯蒂回归和条件概率</h3><p><strong>数学上，正例类别表示y=1，于是我们定义对数几率函数$logit$</strong>，对数几率函数的自变量$p$取值范围$[0,1]$，因变量值域为实数域，将上式中的$p$视为类后验概率估计$p(y=1| x)$,然后定义如下线性关系：<br>$$logit(p(y=1|x))=\omega_0x_0+\omega_1x_1+\omega_m x<em>m=\sum</em>{i=0}^{n}\omega_mx_m=\omega^{T}x$$<br><strong>实际上我们关心的是某个样本属于类别的概率，恰恰是对数几率函数的反函数，也被称为逻辑斯底函数(logistic function)，有时简写为sigmoid函数，函数图像是S型：</strong><br>$$\phi(z)=\frac{1}{1+e^{-z}}$$<br><strong>其中z是网络输入，即权重参数和特征的线性组合:</strong><br>$$z=\omega^{T}x=\omega_0x_0+\omega_1x_1+\omega_m x_m$$<br><strong>sigmoid(S曲线)函数很重要，我们不妨画图看一看：</strong><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#coding:utf-8</span></div><div class="line"><span class="string">'''</span></div><div class="line">Created on 2017年6月21日</div><div class="line"></div><div class="line">@author: 唐杰</div><div class="line">'''</div><div class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</div><div class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">sigmod</span><span class="params">(z)</span>:</span></div><div class="line">    <span class="keyword">return</span> <span class="number">1.0</span>/(<span class="number">1.0</span>+np.exp(-z))</div><div class="line">z=np.arange(<span class="number">-7</span>,<span class="number">7</span>,<span class="number">0.1</span>)</div><div class="line">phi_z=sigmod(z)</div><div class="line">plt.plot(z,phi_z)</div><div class="line">plt.axvline(<span class="number">0.0</span>,color=<span class="string">'k'</span>)</div><div class="line">plt.axhspan(<span class="number">0.0</span>, <span class="number">1.0</span>,facecolor=<span class="string">'1.0'</span>,alpha=<span class="number">1.0</span>,ls=<span class="string">'dotted'</span>)</div><div class="line">plt.axhline(y=<span class="number">0.5</span>,ls=<span class="string">'dotted'</span>,color=<span class="string">'k'</span>)</div><div class="line">plt.axhline(y=<span class="number">0.0</span>,ls=<span class="string">'dotted'</span>,color=<span class="string">'k'</span>)</div><div class="line">plt.axhline(y=<span class="number">1.0</span>,ls=<span class="string">'dotted'</span>,color=<span class="string">'k'</span>)</div><div class="line">plt.yticks([<span class="number">0.0</span>,<span class="number">0.5</span>,<span class="number">1.0</span>])</div><div class="line">plt.ylim(<span class="number">-0.1</span>,<span class="number">1.1</span>)</div><div class="line">plt.xlabel(<span class="string">'z'</span>)</div><div class="line">plt.ylabel(<span class="string">'$\phi(z)$'</span>)</div><div class="line">plt.show()</div></pre></td></tr></table></figure></p>
-<div align="center"><br><img src="http://ofhbt8uhx.bkt.clouddn.com/sigmod.png" alt=""><br></div>
-
-<p><strong>为了直观上对逻辑回归有更好的理解，我们可以和Adaline模型联系起来，二者的唯一区别是：Adaline模型，激活函数 是线性函数，在逻辑回归中，激活函数变成了sigmoid函数。</strong></p>
-<div align="center"><br><img src="http://ofhbt8uhx.bkt.clouddn.com/20170109132626537.png" alt=""><br><img src="http://ofhbt8uhx.bkt.clouddn.com/logistic.PNG" alt=""><br></div>
-
-<p><strong>有了样本的预测概率，再得到样本的类别值就很简单了,和Adaline一样，使用单位阶跃函数：</strong></p>
-<div align="center"><br><img src="http://ofhbt8uhx.bkt.clouddn.com/gs.PNG" alt=""><br></div>
-
-<p><strong>逻辑回归之所以应用广泛，一大优点就是它不但能预测类别，还能输出具体的概率值，概率值很很多场景往往比单纯的类别值重要的多。比如在天气预测中下雨的可能性，病人患病的可能性等等。</strong></p>
-<h3 id="学习逻辑斯底损失函数中的权重参数"><a href="#学习逻辑斯底损失函数中的权重参数" class="headerlink" title="学习逻辑斯底损失函数中的权重参数"></a>学习逻辑斯底损失函数中的权重参数</h3><p><strong>类似上一章感知器中的差平方损失函数</strong><br>$$J(\omega)=\sum_{i}{}\frac{1}{2}(\phi(z^{(i)})-y^{(i)})^{2}$$<br><strong>我们求解损失函数最小时的权重参数，同样，对于逻辑回归，我们也需要定义损失函数，在这之前，先定义似然(likelihood)L的概念，假设训练集中样本独立，似然定义：</strong></p>
-<div align="center"><br><img src="http://ofhbt8uhx.bkt.clouddn.com/1207849-b39c695a3cce1613.png" alt=""><br></div>
-
-<p><strong>与损失函数费尽全力找最小值相反，对于似然函数，我们要找的是最大值。实际上，对于似然的log值，是很容易找到最大值的，也就是最大化log-likelihood函数：</strong></p>
-<div align="center"><br><img src="http://ofhbt8uhx.bkt.clouddn.com/1207849-87a59f428b2e5999.png" alt=""><br></div>
-
-<p><strong>接下来，我们可以运用梯度下降等优化算法来求解最大化log-likelihood时的参数。最大化和最小化本质上没有区别，所以我们还是将log-likelihood写成求最小值的损失函数形式：</strong></p>
-<div align="center"><br><img src="http://ofhbt8uhx.bkt.clouddn.com/1207849-922a62ce004e4924.png" alt=""><br></div>
-
-<p><strong>为了更好地理解此损失函数，假设现在训练集只有一个样本：</strong></p>
-<div align="center"><br><img src="http://ofhbt8uhx.bkt.clouddn.com/1207849-634361468feae857.png" alt=""><br></div>
-
-<p><strong>在预测y=0和y=1的情况下，如下图公式所示:</strong></p>
-<div align="center"><br><img src="http://ofhbt8uhx.bkt.clouddn.com/1207849-4c5a0ad538d9e329.png" alt=""><br></div>
-
-<p><strong>对于蓝线，如果逻辑回归预测结果正确，类别为1，则损失为0；对于绿线，如果逻辑回归预测正确，类别为0，则损失为0。 如果预测错误，则损失趋向正无穷。</strong></p>
-<div align="center"><br><img src="http://ofhbt8uhx.bkt.clouddn.com/1207849-a7d67c2410bd7e27.png" alt=""><br></div>
-
-<h3 id="调用scikit-learn训练逻辑回归模型"><a href="#调用scikit-learn训练逻辑回归模型" class="headerlink" title="调用scikit-learn训练逻辑回归模型"></a>调用scikit-learn训练逻辑回归模型</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#coding:utf-8</span></div><div class="line"><span class="string">'''</span></div><div class="line">Created on 2017年6月16日</div><div class="line">逻辑回归模型</div><div class="line">@author: 唐杰</div><div class="line">'''</div><div class="line"><span class="keyword">from</span> sklearn.linear_model <span class="keyword">import</span> LogisticRegression</div><div class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> datasets</div><div class="line"><span class="keyword">from</span> sklearn.cross_validation <span class="keyword">import</span> train_test_split </div><div class="line"><span class="keyword">from</span> sklearn.preprocessing <span class="keyword">import</span> StandardScaler</div><div class="line"><span class="keyword">import</span> Util</div><div class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</div><div class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</div><div class="line">    lris=datasets.load_iris()</div><div class="line">    X=lris.data[:,[<span class="number">2</span>,<span class="number">3</span>]]</div><div class="line">    y=lris.target</div><div class="line">    <span class="comment">#将数据集分为训练集和测试集，训练集占30%</span></div><div class="line">    X_train,X_test,y_train,y_test=train_test_split(X,y,test_size=<span class="number">0.3</span>,random_state=<span class="number">0</span>) </div><div class="line">    <span class="comment">#数据集标准化</span></div><div class="line">    sc=StandardScaler()</div><div class="line">    sc.fit(X_train)</div><div class="line">    X_train_std=sc.transform(X_train)</div><div class="line">    X_test_std=sc.transform(X_test)</div><div class="line">    X_combined_std=np.vstack((X_train_std,X_test_std))</div><div class="line">    y_combined=np.hstack((y_train,y_test))</div><div class="line">    lr=LogisticRegression(C=<span class="number">1000.0</span>,random_state=<span class="number">0</span>)</div><div class="line">    lr.fit(X_train_std,y_train)</div><div class="line">    Util.plot_decision_region(X_combined_std, y_combined, classifier=lr)</div><div class="line">    plt.xlabel(<span class="string">'petal length [standardized]'</span>)</div><div class="line">    plt.ylabel(<span class="string">'sepal length [standardized]'</span>)</div><div class="line">    plt.legend(loc=<span class="string">'upper left'</span>)</div><div class="line">    plt.show()</div></pre></td></tr></table></figure>
-<p><strong>训练模型后，我们画出决策界</strong></p>
-<div align="center"><br><img src="http://ofhbt8uhx.bkt.clouddn.com/logisticMenu.png" alt=""><br></div>
-
+<p><strong>从图中可见三个类别无法被线性决策界完美分类</strong><br>
+        <p class="article-more-link">
+          <a class="article-more-a"  href="/2017/06/21/Scikit-learn之旅（1）/#more">more >></a>
+        </p>
       
     </div>
     <div class="article-info article-info-index">
@@ -699,67 +704,6 @@
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags"></i>
 		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li></ul>
-	</div>
-
-      
-
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-Android登陆界面设计" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/21/Android登陆界面设计/">Android登陆界面设计</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<blockquote>
-<p>登陆界面的设计主要包括</p>
-<ul>
-<li>欢迎界面</li>
-<li>登陆界面</li>
-<li>注册界面</li>
-</ul>
-</blockquote>
-<p>废话不多说，借用一哥们的qq登陆界面学习一下。<br>链接：<a href="https://github.com/dongdatangjie/QQLogin">GItHub</a><br>
-        <p class="article-more-link">
-          <a class="article-more-a"  href="/2017/03/21/Android登陆界面设计/#more">more >></a>
-        </p>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      <a href="/2017/03/21/Android登陆界面设计/" class="archive-article-date">
-  	<time datetime="2017-03-21T14:14:10.000Z" itemprop="datePublished"><i class="icon-clock"></i>2017-03-21</time>
-</a>
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
 	</div>
 
       

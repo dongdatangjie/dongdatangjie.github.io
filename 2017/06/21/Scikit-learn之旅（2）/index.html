@@ -26,7 +26,7 @@
 <meta property="og:image" content="http://ofhbt8uhx.bkt.clouddn.com/kernel1.png">
 <meta property="og:image" content="http://ofhbt8uhx.bkt.clouddn.com/kernel2.png">
 <meta property="og:image" content="http://ofhbt8uhx.bkt.clouddn.com/tree1.png">
-<meta property="og:updated_time" content="2017-06-21T13:14:31.018Z">
+<meta property="og:updated_time" content="2017-06-22T14:47:28.291Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content=" Scikit-learn之旅（2）">
 <meta name="twitter:description" content="支持向量机(SVM)SVM是一个由分类超平面定义的判别分类器。也就是说给定一组带标签的训练样本，算法将会输出一个最优超平面对新样本(测试样本)进行分类。在SVM中，我们的优化目标是最大化间隔(margin)。间隔定义为两个分隔超平面(决策界)的距离，那些最靠近超平面的训练样本也被称为支持向量(suppor vectors)
@@ -189,10 +189,10 @@
 <li><strong>超平面：</strong>如果数据集是N维的，那么就需要N-1维的某对象来对数据进行分割。该对象叫做超平面，也就是分类的决策边界。</li>
 <li><strong>间隔：</strong>一个点到分割面的距离，称为点相对于分割面的距离。数据集中所有的点到分割面的最小间隔的2倍，称为分类器或数据集的间隔。</li>
 <li><strong>最大间隔：</strong>SVM分类器是要找最大的数据集间隔。</li>
-<li><strong>支持向量：</strong>离分割超平面最近的那些点。</li>
+<li><strong>支持向量：</strong>离分割超平面最近的那些点。<a id="more"></a>
+<h3 id="最大间隔"><a href="#最大间隔" class="headerlink" title="最大间隔"></a>最大间隔</h3><strong>最大化决策界的间隔，这么做的原因是间隔大的决策界趋向于含有更小的泛化误差，而间隔小的决策界更容易过拟合。为了更好地理解间隔最大化，我们先认识一下那些和决策界平行的正超平面和负超平面，他们可以表示为：</strong><br>$$\omega_0+ \omega^{T}x_p=1 \qquad (1)$$<br>$$\omega_0+ \omega^{T}x_n=-1 \qquad(2)$$</li>
 </ul>
 </blockquote>
-<h3 id="最大间隔"><a href="#最大间隔" class="headerlink" title="最大间隔"></a>最大间隔</h3><p><strong>最大化决策界的间隔，这么做的原因是间隔大的决策界趋向于含有更小的泛化误差，而间隔小的决策界更容易过拟合。为了更好地理解间隔最大化，我们先认识一下那些和决策界平行的正超平面和负超平面，他们可以表示为：</strong><br>$$\omega_0+ \omega^{T}x_p=1 \qquad (1)$$<br>$$\omega_0+ \omega^{T}x_n=-1 \qquad(2)$$</p>
 <p><strong>用(1)减去(2)，得到：</strong><br>$$\Rightarrow \omega^{T}(x_p-x_n)=2$$</p>
 <p><strong>对上式进行归一化，</strong><br>$$\frac{\omega^{T}(x_p-x_n)}{\parallel\omega\parallel}=\frac{2}{\parallel\omega\parallel}$$</p>
 <p><strong>其中，$\parallel\omega\parallel=\sqrt{\sum_{j=1}^{m}\omega_j^{2}}$</strong><br><strong>上式等号左边可以解释为正超平面和负超平面之间的距离，也就是所谓的间隔。</strong><br><strong>现在SVM的目标函数变成了最大化间隔 ,限制条件是样本被正确分类，可以写成：</strong><br>$$\omega_0+\omega^{T}x^{(i)}\ge1\qquad y^{(i)}=1$$<br>$$\omega_0+\omega^{T}x^{(i)}&lt;-1\qquad y^{(i)}=-1$$<br><strong>上面两个限制条件说的是所有负样本要落在负超平面那一侧，所有正样本要落在正超平面那侧。我们用更简洁的写法代替：</strong><br>$$y^{(i)}(\omega_0+\omega^{T}x^{(i)})\ge1\qquad \forall_i$$</p>
@@ -229,6 +229,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2017/06/22/python机器学习之旅/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          python机器学习之旅
+        
+      </div>
+    </a>
   
   
     <a href="/2017/06/21/Scikit-learn之旅（1）/" id="article-nav-older" class="article-nav-link-wrap">

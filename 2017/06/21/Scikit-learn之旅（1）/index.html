@@ -15,8 +15,7 @@
 代码运行结果：
 
 
-从图中可见三个类别无法被线性决策界完美分类
-逻辑斯蒂回归对类别概率建模逻辑斯蒂回归和条件概率数学上，正例类别表示y=1，于是我们定义对数几率函数$logit$，对数几率函数的自变量$p$取值范围$[">
+从图中可见三个类别无法被线性决策界完美分类">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Scikit-learn之旅（1）">
 <meta property="og:url" content="http://yoursite.com/2017/06/21/Scikit-learn之旅（1）/index.html">
@@ -30,8 +29,7 @@
 代码运行结果：
 
 
-从图中可见三个类别无法被线性决策界完美分类
-逻辑斯蒂回归对类别概率建模逻辑斯蒂回归和条件概率数学上，正例类别表示y=1，于是我们定义对数几率函数$logit$，对数几率函数的自变量$p$取值范围$[">
+从图中可见三个类别无法被线性决策界完美分类">
 <meta property="og:image" content="http://ofhbt8uhx.bkt.clouddn.com/scikit-learn%E8%AE%AD%E7%BB%83%E6%84%9F%E7%9F%A5%E5%99%A8.png">
 <meta property="og:image" content="http://ofhbt8uhx.bkt.clouddn.com/%E6%84%9F%E7%9F%A5%E5%99%A8.png">
 <meta property="og:image" content="http://ofhbt8uhx.bkt.clouddn.com/sigmod.png">
@@ -45,7 +43,7 @@
 <meta property="og:image" content="http://ofhbt8uhx.bkt.clouddn.com/1207849-4c5a0ad538d9e329.png">
 <meta property="og:image" content="http://ofhbt8uhx.bkt.clouddn.com/1207849-a7d67c2410bd7e27.png">
 <meta property="og:image" content="http://ofhbt8uhx.bkt.clouddn.com/logisticMenu.png">
-<meta property="og:updated_time" content="2017-06-21T06:35:14.430Z">
+<meta property="og:updated_time" content="2017-06-22T14:47:15.646Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Scikit-learn之旅（1）">
 <meta name="twitter:description" content="sklearn 训练感知机
@@ -57,8 +55,7 @@
 代码运行结果：
 
 
-从图中可见三个类别无法被线性决策界完美分类
-逻辑斯蒂回归对类别概率建模逻辑斯蒂回归和条件概率数学上，正例类别表示y=1，于是我们定义对数几率函数$logit$，对数几率函数的自变量$p$取值范围$[">
+从图中可见三个类别无法被线性决策界完美分类">
 <meta name="twitter:image" content="http://ofhbt8uhx.bkt.clouddn.com/scikit-learn%E8%AE%AD%E7%BB%83%E6%84%9F%E7%9F%A5%E5%99%A8.png">
   
     <link rel="alternative" href="/atom.xml" title="研究生学测试的南航程序员" type="application/atom+xml">
@@ -215,7 +212,7 @@
 <p><strong>代码运行结果：</strong></p>
 <div align="center"><br><img src="http://ofhbt8uhx.bkt.clouddn.com/%E6%84%9F%E7%9F%A5%E5%99%A8.png" alt=""><br></div>
 
-<p><strong>从图中可见三个类别无法被线性决策界完美分类</strong></p>
+<p><strong>从图中可见三个类别无法被线性决策界完美分类</strong><br><a id="more"></a></p>
 <h2 id="逻辑斯蒂回归对类别概率建模"><a href="#逻辑斯蒂回归对类别概率建模" class="headerlink" title="逻辑斯蒂回归对类别概率建模"></a>逻辑斯蒂回归对类别概率建模</h2><h3 id="逻辑斯蒂回归和条件概率"><a href="#逻辑斯蒂回归和条件概率" class="headerlink" title="逻辑斯蒂回归和条件概率"></a>逻辑斯蒂回归和条件概率</h3><p><strong>数学上，正例类别表示y=1，于是我们定义对数几率函数$logit$</strong>，对数几率函数的自变量$p$取值范围$[0,1]$，因变量值域为实数域，将上式中的$p$视为类后验概率估计$p(y=1| x)$,然后定义如下线性关系：<br>$$logit(p(y=1|x))=\omega_0x_0+\omega_1x_1+\omega_m x<em>m=\sum</em>{i=0}^{n}\omega_mx_m=\omega^{T}x$$<br><strong>实际上我们关心的是某个样本属于类别的概率，恰恰是对数几率函数的反函数，也被称为逻辑斯底函数(logistic function)，有时简写为sigmoid函数，函数图像是S型：</strong><br>$$\phi(z)=\frac{1}{1+e^{-z}}$$<br><strong>其中z是网络输入，即权重参数和特征的线性组合:</strong><br>$$z=\omega^{T}x=\omega_0x_0+\omega_1x_1+\omega_m x_m$$<br><strong>sigmoid(S曲线)函数很重要，我们不妨画图看一看：</strong><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#coding:utf-8</span></div><div class="line"><span class="string">'''</span></div><div class="line">Created on 2017年6月21日</div><div class="line"></div><div class="line">@author: 唐杰</div><div class="line">'''</div><div class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</div><div class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">sigmod</span><span class="params">(z)</span>:</span></div><div class="line">    <span class="keyword">return</span> <span class="number">1.0</span>/(<span class="number">1.0</span>+np.exp(-z))</div><div class="line">z=np.arange(<span class="number">-7</span>,<span class="number">7</span>,<span class="number">0.1</span>)</div><div class="line">phi_z=sigmod(z)</div><div class="line">plt.plot(z,phi_z)</div><div class="line">plt.axvline(<span class="number">0.0</span>,color=<span class="string">'k'</span>)</div><div class="line">plt.axhspan(<span class="number">0.0</span>, <span class="number">1.0</span>,facecolor=<span class="string">'1.0'</span>,alpha=<span class="number">1.0</span>,ls=<span class="string">'dotted'</span>)</div><div class="line">plt.axhline(y=<span class="number">0.5</span>,ls=<span class="string">'dotted'</span>,color=<span class="string">'k'</span>)</div><div class="line">plt.axhline(y=<span class="number">0.0</span>,ls=<span class="string">'dotted'</span>,color=<span class="string">'k'</span>)</div><div class="line">plt.axhline(y=<span class="number">1.0</span>,ls=<span class="string">'dotted'</span>,color=<span class="string">'k'</span>)</div><div class="line">plt.yticks([<span class="number">0.0</span>,<span class="number">0.5</span>,<span class="number">1.0</span>])</div><div class="line">plt.ylim(<span class="number">-0.1</span>,<span class="number">1.1</span>)</div><div class="line">plt.xlabel(<span class="string">'z'</span>)</div><div class="line">plt.ylabel(<span class="string">'$\phi(z)$'</span>)</div><div class="line">plt.show()</div></pre></td></tr></table></figure></p>
 <div align="center"><br><img src="http://ofhbt8uhx.bkt.clouddn.com/sigmod.png" alt=""><br></div>
 
